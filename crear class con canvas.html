@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Ejercicio crear clases. 
+    </title>
+</head>
+  <body>
+    <script>
+      class Rectangulo {
+        //Parametros por defecto
+        constructor(x=0,y=0,alto=0,ancho=0){
+          this._x=x;
+          this._y=y;
+          this._alto=alto;
+          this._ancho=ancho;
+        }
+        calcularArea(){
+          alert("Estoy calculando el área");
+          return this._alto*this._ancho;
+        }
+        desplazar(dx,dy){
+          this._x+=dx;
+          this._y+=dy;
+        }
+        mostrar(){
+          alert("X:"+this._x+"\nY:"+this._y+"\nancho:"+this._ancho+"\nalto:"+this._alto);
+        }
+      }
+      let r1=new Rectangulo(0,0,2,4); //utilizo new y el nombre de la clase
+      r1.mostrar();
+      r1._alto=10;
+      r1._ancho=20;
+      alert("El area del rectangulo es: "+r1.calcularArea());
+      r1.mostrar();
+      r1.desplazar(5,6);
+      r1.mostrar();
+      //Me creo un objeto Rectangulo con los valores por defecto que tenemos establecidos
+      let r2=new Rectangulo();
+      r2.mostrar(); // Me muestra la clase con los primerosparametros predefinidos
+      function miFuncion(){
+        let canvas=document.getElementById("micanvas");
+        let ctx=canvas.getContext("2d");
+        ctx.strokeStyle="#FF0000";
+        ctx.rect(r1._x,r1._y,r1._ancho,r1._alto);
+        ctx.stroke();
+      }
+    </script>
+    <canvas id="micanvas" width="200" height="100" style="border:1px solid #c3c3c3;"> Tu navegador no soporta canvas </canvas>
+    <br/>
+    <button onclick="miFuncion()">Pintalo</button>
+ </body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Creando NODOS (DOM)
+	</title>
+	<script>
+		let i=0;
+		function botonea()
+		{
+
+			let btn=document.createElement("button");
+			let t=document.createTextNode("CLICK Nº "+i);
+			btn.appendChild(t);
+			btn.onclick=function(){
+				console.log("Hola");
+			}
+			document.body.appendChild(btn);
+			i++;
+		}
+	</script>
+	<button type="button" onclick="botonea()">Pincha</button>
+</body>
+</html>

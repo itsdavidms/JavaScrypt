@@ -1,0 +1,31 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 20/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+								let num,i,mitad,primos,totalprimos;
+								primos=0
+								num=1
+								totalprimos=prompt("catidad de primos que quieres buscar")
+								while(primos<totalprimos)
+								{
+									i=2;
+									mitad=num/2;
+									while((i<=mitad)&&(num%i!=0))
+										i++;
+									if(i>mitad && num!=1)
+									{
+										document.write(num+",");
+										primos++;
+									}
+									num++;
+								}
+						</script>
+				</body>
+	</html>

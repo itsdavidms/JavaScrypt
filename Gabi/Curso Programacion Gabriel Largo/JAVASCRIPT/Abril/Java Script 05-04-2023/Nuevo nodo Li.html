@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<title>	
+			JAVA SCRIPT 05/04/2023 
+</title>
+<meta charset="UTF-8">
+<head>
+</head>
+<body>
+<ul id="miLista"><li>Cafe</li><li>Te</li>
+	</ul>
+	<p> Haz click en el boton para añadir un elemento a la lista </p>
+	<button onclick="miFuncion()">Pincha!</button>
+	<p><strong>Explicacion;</strong>primero creamos el nodo LI node,<br>creamos el nodo de texto, <br>y añadimos el nodo de texto al LI.<br>Finalmente insertamos el nodo LI antes del primer nodo hijo de la lista </p>
+
+	<script>
+	function miFuncion()
+	 {
+		let miNuevoLi=document.createElement("li");
+		let miNodoTexto=document.createTextNode("Water");
+		miNuevoLi.appendChild(miNodoTexto);
+		let lista= document.getElementById('miLista');
+		lista.insertBefore(miNuevoLi,lista.childNodes[0]);	
+		}	
+	</script>
+</body>
+</html>

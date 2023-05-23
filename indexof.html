@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		indexOf
+	</title>
+</head>
+<body>
+	<script>
+		let cadena="Hola mundo", i=0, espacio;
+		document.write("<strong>");
+		espacio=cadena.indexOf(" ");
+		while(i<espacio)
+		{
+			document.write(cadena.charAt(i));
+			i++;
+		}
+		document.write("</strong>");
+		while(i<cadena.length)
+		{
+			document.write(cadena.charAt(i));
+			i++;
+		}
+	</script>
+</body>
+</html>

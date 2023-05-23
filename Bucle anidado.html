@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			table, tr, td{
+				border:1px solid black;
+			}
+			table{
+				border-collapse: collapse;
+				width:10%;
+				margin:auto;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			let i, j=0;
+			i=1;
+			while(i<=10)
+			{
+				document.write("<table>")
+				j=1;
+				while(j<=10)
+				{
+					document.write(`<tr><td>${i}</td><td>x</td><td>${j}</td><td>=</td><td>${i*j}</td></tr>`);
+					j++;
+				}
+				document.write(`</table><br/>`);
+				i++;
+			}
+		</script>
+	</body>
+</html>

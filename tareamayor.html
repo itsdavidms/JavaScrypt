@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<body>
+<script>
+ let numero1,numero2,numero3,mayor,menor;
+ numero1=parseInt(prompt("Introduce un numero",""));
+ numero2=parseInt(prompt("Introduce otro numero",""));
+ numero3=parseInt(prompt("Introduce otro numero",""));
+if(numero2>numero1)
+{
+    mayor=numero2;
+    menor=numero1
+}
+else{
+    menor=numero2
+    mayor=numero1;
+}
+if(numero3>mayor)
+    mayor=numero3;
+else
+    if(numero3<menor)
+        menor=numero3;
+</script>
+<script>
+    document.write("El mayor es el "+mayor+"<br/>");
+    document.write("El menor es el "+menor+"<br/>");
+</script>
+</body>
+</html>

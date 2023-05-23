@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			FUNCIÓN NÚMERO PRIMO
+		</title>
+		<script>
+			let num, i, mitad;
+			function esPrimo(num){
+				i=2;
+				mitad=num/2;
+				while((i<=mitad)&&(num%i!=0))
+					i++;
+				if(i>mitad && num!=1)
+					return true;
+				else
+					return false;
+			}
+			if (esPrimo(113))
+				alert("Es primo");
+			else
+				alert("No es primo");
+
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

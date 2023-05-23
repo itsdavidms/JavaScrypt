@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Check/Uncheck boton
+    </title>
+    <script>
+      function check() {
+      document.getElementById("red").checked=true;
+      console.log("Podria comprobar, si lo necesito, el valor del checked en un if=>"+document.getElementById("red").checked);
+    }
+      function uncheck() {
+      document.getElementById("red").checked=false;
+      console.log("Podria comprobar, si lo necesito, el valor del checked en un if=>"+document.getElementById("red").checked);
+    }
+  </script>
+</head>
+  <body>
+    <form>
+      Cual es tu color prefe?<br>
+      <input type="radio" id="red" name="colors"/>Rojo<br/>
+      <input type="radio" id="blue" name="colors"/>Azul<br/>
+      <input type="radio" id="green" name="colors"/>Verde<br/>
+</form>
+  <button type="button" onclick="check()">Marca el "Rojo"</button>
+  <button type="button" onclick="uncheck()">Desmarca el "Rojo"</button>
+ </body>
+</html>

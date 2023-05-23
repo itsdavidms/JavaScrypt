@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FETCH</title>
+</head>
+<body>
+	<h2> Ejemplo Fetch </h2>
+	<p id="demo"></p>
+	<script>
+		//Web que devuelve el objeto Json con la fecha
+		/* {
+		"date": "09-01-2022",
+		"miliseconds_since_epoch": 1662033379241,
+		"time" : "11:56:19 AM"
+		}
+		*/
+		var url='http://date.jsontest.com';
+
+		fetch(url)
+		//Convertimos la respuesta a Json
+		.then(r=>r.json())
+		.then(data=>document.getElementById("demo").innerHTML=data.time)
+		.catch(e=>console.erros('Something went wrong'));
+	</script>
+</body>
+</html> 

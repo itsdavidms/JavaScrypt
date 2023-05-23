@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>JAVA SCRIPT 21/03/2023</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script>
+      // Define una función que muestra un mensaje de bienvenida
+      function mostrarMensajeDeBienvenida(nombre, rol) {
+        console.log("Bienvenido " + nombre + ", el " + rol);
+      }
+
+      // Define una lista de objetos de nombre y rol utilizando la clase Array
+      const nombresYRoles = new Array(
+        { nombre: "Harry Potter", rol: "niño de las gafas redondas" },
+        { nombre: "Frodo", rol: "Hobbit" }
+      );
+
+      // Llama a la función para cada elemento del Array
+      for (let i = 0; i < nombresYRoles.length; i++) {
+        const persona = nombresYRoles[i];
+        mostrarMensajeDeBienvenida(persona.nombre, persona.rol);
+      }
+    </script>
+  </body>
+</html>

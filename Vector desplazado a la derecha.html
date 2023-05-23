@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<script>
+			let i, v=[0,1,2,3,4,5,6,7,8,9];
+			let aux=v[v.length-1];
+			i=v.length-1;
+			document.write(`${v}<br/>`);
+			while(i>0)
+			{
+				v[i]=v[i-1];
+				i--;
+			}
+			v[0]=aux;
+			document.write(v);
+		</script>
+	</body>
+</html>

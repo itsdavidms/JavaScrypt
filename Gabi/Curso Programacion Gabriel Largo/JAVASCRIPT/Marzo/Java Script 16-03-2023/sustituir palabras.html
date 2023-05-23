@@ -1,0 +1,23 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 0/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+					<p>Haz Click en el boton para remplazar "blue" por "red":</p>
+					<p id="demo">Mr Blue has a blue house and a blue car.</p>
+					<button onclick="miFuncion()">Pincha</button>
+						<script>
+						function miFuncion() 
+						{
+							let str=document.getElementById("demo").innerHTML;
+							let n=str.replace(/blue/g,"red");
+							document.getElementById("demo").innerHTML=n;
+						}
+						</script>
+				</body>
+	</html>

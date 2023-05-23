@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Creando NODOS (DOM)
+	</title>
+	<div id="div1">
+		<p id="p1">Esto es un parrafo</p>
+		<p id="p2">Esto es otro parrafo</p>
+	</div>
+	<script>
+		function escribeAlgo()
+		{
+
+			let parrafo=document.createElement("p");
+			let nodoTexto=document.createTextNode("Esto es nuevo");
+			parrafo.appendChild(nodoTexto);
+			let miDiv=document.getElementById("div1");
+			miDiv.appendChild(parrafo);
+		}
+	</script>
+	<button type="button" onclick="escribeAlgo()">Pincha</button>
+</body>
+</html>

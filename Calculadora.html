@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Calculadora del IVA</title>
+     <link rel="stylesheet" type="text/css" href="style.css" />
+     <script src="iva.js"></script>
+</head>
+<body>
+<div id="content">
+     <h1>Calculadora del IVA</h1>
+     <p>Introduce un valor y pulsa "Calcular".</p>
+     <div id="calculadora_iva">
+           <label for="subtotal">Subtotal:</label>
+           <input type="text" id="subtotal"/><br/>
+           <label for="porcentaje_iva">% IVA:</label>
+           <input type="text" id="porcentaje_iva"/><br/>
+           <label for="total"> Total:</label>
+           <input type="text" id="total" disabled="disabled"/><br/>
+           <label for="iva_venta">IVA:</label>
+           <input type="text" id="iva_venta" disabled="disabled"/><br/>
+           <label>&nbsp;</label>
+           <input type="button" id="calcular" value="Calcular"/><br/>
+     </div>
+</div>
+</body>
+</html>

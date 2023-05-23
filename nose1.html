@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+      window.onload = function() {
+        document.onmousemove = muestrainfo;
+      }
+      function muestrainfo(elEvento){
+        let x= elEvento.clientX;
+        let y= elEvento.clientY;
+        document.getElementById('demo').textContent="X: "+x+"Y: "+y;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+    
+    </script>
+  </body>
+</html>

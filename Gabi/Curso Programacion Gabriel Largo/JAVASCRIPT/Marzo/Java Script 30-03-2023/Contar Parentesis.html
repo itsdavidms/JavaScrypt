@@ -1,0 +1,30 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 30/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+					<script>
+					let mensaje =prompt("Introduce Todos los parentencis que quieras");
+					let i=0;
+					let contador=0
+					for(contador=0;i<mensaje.length && contador>=0;i++)
+					{
+						if(mensaje[i]=="(")
+							contador++;
+						else
+							if(mensaje[i]==")")
+								contador--;
+					}
+					if (contador==0)
+						alert("La cadena esta ok " +mensaje)
+					else
+						alert("La cadena es kk" +mensaje);
+					
+					</script>
+				</body>
+	</html>

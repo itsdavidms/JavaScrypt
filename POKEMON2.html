@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Pokemón</title>
+		<style>
+			body
+				{
+				text-align:center; color:#021463;
+				}
+		</style>
+	</head>
+<body>
+	<h3>· P O K E M Ó N ·</h3>
+		<script>
+			let pokemon=["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon",];
+			let imagenes=new Array();
+			let i=0;
+			while(i<pokemon.lenght)
+			{
+				//Hace un bucle infinito con las URL de las imagenes
+				imagenes[i]="<img src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/"+(i+1)+".png' width='250'>";
+				console.log(imagenes[i]);
+				i++;
+			}
+			pokemonElegido=[Math.floor(Math.random()*pokemon.length)];
+			let salida=pokemon[pokemonElegido];
+			document.write(salida);
+			document.write("<br/>"+imagenes[pokemonElegido]);
+			let fuerza=Math.floor(Math.random()*20)+1;
+			document.write(`<br/><meter value="${fuerza}" min="0" max="20"></meter><br/>`);
+			document.write("<br/>Fuerza="+fuerza);
+		</script>
+</body>
+</html>

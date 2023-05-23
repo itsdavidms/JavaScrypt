@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script>
+	let respuestaBuena=Math.floor(Math.random()*5+1);
+	let correcto='<img src="https://media3.giphy.com/media/LmqitTYGsNMiWu3VWO/giphy.gif?cid=ecf05e473rbilj19ybs1ubt58n3olufehv760kyijndstk9z&rid=giphy.gif&ct=g">';
+	let incorrecto='<img src="https://www.nicepng.com/png/detail/24-241533_emoji-mano-en-la-cara.png">';
+	//incorrecto=incorrecto+"<br/>La respuesta correcta era el "+repsuestaBuena;
+	incorrecto+="<br/>La respuesta buena era el "+respuestaBuena
+	let respuesta=prompt("He pensado un numero del 1 al 5, adivinalo","0");
+	let salida=(respuesta==respuestaBuena)?correcto:incorrecto;
+</script>
+</head>
+<body>
+	<script>
+		document.write(salida);
+	</script>
+</body>
+</html>

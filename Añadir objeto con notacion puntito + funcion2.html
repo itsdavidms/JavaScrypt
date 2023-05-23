@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Añadir objeto 
+    </title>
+</head>
+  <body>
+    <script>
+      let persona=new Object(); //let persona={};
+      let persona2=persona;
+      persona.nombre="Juan";
+      persona.apellido="Lopez";
+      persona.edad=50;
+      persona.colorOjos="azul";
+      persona.muestraNombre=function() {
+        alert("El nombre es "+this.nombre);
+      }
+      persona.muestraEdad=function(){
+        alert("La edad es "+this.edad);
+      }
+      persona.muestraColorOjos=function(){
+        alert("El color de ojos es "+this.colorDeOjos);
+      }
+      document.write(persona.nombre + " tiene " + persona.edad+ " años.");
+      persona.muestraNombre();
+      persona2.muestraNombre();
+
+    </script>
+ </body>
+</html>

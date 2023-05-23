@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<body>
+	<meta charset="UTF-8">
+	<script>
+	let colores=new Array();
+	colores[0]="azul";
+	colores[1]="rojo";
+	colores[2]="amarillo";
+	colores[3]="verde";
+	colores[4]="rosa";
+	document.write("Colores a elegir: "+colores);
+	let respuesta=prompt("¿Qué color te gusta a tí más?");
+	let colorElegido=colores[Math.floor(Math.random()*colores.length)];
+	let salida=respuesta==colorElegido?"<br/>A mi también me gusta el "+respuesta:"<br/>Pues a mi me gusta mas el "+colorElegido;
+	document.write(salida);
+	</script>
+</body>
+</html>

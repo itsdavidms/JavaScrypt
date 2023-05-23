@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Ejercicio agregar un elemento a un vector ordenado
+	</title>
+</head>
+<body>
+	<script>
+		let numero, i, v=[2,5,8,22,44,65];
+		document.write(v);
+		numero=prompt("Introduce el numero a insertar");
+		i=v.length-1;
+		while((i>=0)&&(v[i]>numero)){
+			v[i+1]=v[i];
+			i--;
+		}
+		v[i+1]=numero;
+		document.write("<br/>")
+		document.write(v)
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+			SECUENCIA DE 5 DIGITOS CONSECUTIVOS
+		</title>
+			<meta charset="UTF-8">
+	</head>
+	<body>
+		<script>
+			let numero, valor, contador, i=0, v=[2,2,2,3,3,3,5,5,5,5,9,9,9,9,9,5];		
+			document.write(v);
+			valor=v[0];
+			contador=1;
+			i=1;
+			while((contador<5)&&(i<v.length))
+			{
+				if(v[i]==valor)
+					contador++;
+				else{
+					valor=v[i];
+					contador=1;
+				}
+				i++;
+			}
+			if(contador==5)
+				alert("La secuencia esta entre "+(i-5)+" y "+(i-1)+" y es el numero"+v[i-1]);
+			else
+				alert("No hay secuencia");
+			document.write(`<br/>///////////////<br/>`);
+			document.write(v);
+		</script>
+	</body>
+</html>

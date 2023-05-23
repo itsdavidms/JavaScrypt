@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		replace
+	</title>
+</head>
+<body>
+	<p> Haz click para reemplazar "blue" por "red" : </p>
+	<p id="demo"> Mr Blue has a blue house and a blue car </p>
+	<button onclick="miFuncion()"> Pincha aquí</button>
+	<script>
+		function miFuncion()
+		{
+			let str=document.getElementById("demo").innerHTML;
+			let n=str.replace(/blue/g,"red");
+			/*Con g me saca todas las apariciones*/
+			document.getElementById("demo").innerHTML=n;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script>
+  class Luchador {
+    constructor(nombreLuchador) {
+      this.nombre = nombreLuchador;
+      this.vida = 100;
+      this.danyoMaximo = 20;
+    }
+
+    estavivo() {
+      if (this.vida > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    golpear() {
+      return Math.floor(Math.random() * this.danyoMaximo) + 1;
+    }
+
+    recibirdanyo(danyoRecibido) {
+      this.vida -= danyoRecibido; 
+    }
+  }
+
+  class Combate {
+    constructor(luchador1, luchador2) {
+      this.luchador1 = luchador1;
+      this.luchador2 = luchador2;
+    }
+
+    realizarCombate() {
+      while (this.luchador1.estavivo() && this.luchador2.estavivo()) {
+        alert(this.luchador1.nombre + ": " + this.luchador1.vida + " - " + this.luchador2.nombre + ": " + this.luchador2.vida);
+        let danyo = this.luchador1.golpear();
+        this.luchador2.recibirdanyo(danyo);
+        alert(this.luchador1.nombre + " inflinge un daño de " + danyo);
+        danyo = this.luchador2.golpear();
+        this.luchador1.recibirdanyo(danyo);
+        alert(this.luchador2.nombre + " inflinge un daño de " + danyo);
+      }
+
+      if (this.luchador1.estavivo() && this.luchador2.estavivo()) {
+        return null;
+      } else if (this.luchador1.estavivo()) {
+        return this.luchador1;
+      }
+
+      return this.luchador2; 
+    }
+  }
+
+  let jugador1, jugador2, luchadorGanador;
+  let danyo;
+  jugador1 = new Luchador("ken");
+  jugador2 = new Luchador("ryu");
+  let combate = new Combate(jugador1, jugador2); 
+  luchadorGanador = combate.realizarCombate();
+  if (luchadorGanador != null) {
+    alert("El luchador ganador ha sido " + luchadorGanador.nombre);
+    document.write("El jugador ganador ha sido " + luchadorGanador.nombre);
+  } else {
+    alert("Ha habido doble KO");
+    document.write("Ha habido doble KO");
+  }
+</script>
+</body>
+</html>

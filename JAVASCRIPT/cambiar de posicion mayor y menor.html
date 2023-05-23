@@ -1,0 +1,40 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 07/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+								let i=0 , v=[1,2,8,4,5], mayor,menor;
+								//let posicion=false;
+								mayor=v[0];
+								menor=v[0];
+								variablemayor=0
+								variablemenor=0
+								console.log()
+								while(i<v.length)
+								{
+									if(v[i]>mayor)
+									{
+										mayor=v[i];
+										variablemayor=i
+									}
+									else
+										if(v[i]<menor)
+										{
+											menor=v[i];
+											variablemenor=i
+										}	
+											i++;
+								}
+								v[variablemayor]=menor
+								v[variablemenor]=mayor
+								document.write(`${v}<br/>`);
+								document.write();
+						</script>
+				</body>
+	</html>

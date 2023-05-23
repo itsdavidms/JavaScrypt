@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<title>	
+			10/02
+		 
+	</title>
+			<meta charset="UTF-8">
+			<h1> 
+							<style>
+								body{background-color:"yellow;"}
+								 h1{font-size:12px;}
+								 h2{color;white}
+								 p{margin-left: 50px}
+							</style>
+	
+</head>
+			<body>
+					<svg xmls="https://www.w3.org/2000/svg" version="1.1" height="190">
+						<polygon points="100,10 40,180 190,60 10, 60 160,180"
+						style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"/>
+					</svg>
+					<video width="320" height="240" controls="controls">
+						<source src="movie.mp4" type="video/mp4">
+							<source src="movie.ogg" type="video/ogg">
+					</video>
+					<audio controls="controls">
+
+						<source src="horse.ogg" type="audio/ogg/">
+						<source src="horse.mp3" type="audio/mpeg/">
+
+					</audio>
+					<p id="demo">
+						<button onclick="obtenerLocalizacion()">Pruebalo
+							<script>
+								let x=document.getElementById("demo");
+								function obtenerLocalizacion() 
+								{
+									if (navigator.geolocation) 
+									{
+										navigator.geolocation.getCurrentPosition(mostrarLocalizacion);
+									}	
+									else{
+										x.innerHTML="La geolocation no soporta tu navegador.";
+									}
+
+								}
+									function mostrarLocalizacion(position)
+									{
+										x.innerHTML="Latitud: " + position.coords.latitude+ "<br/>Longitud:" + position.coords.longitude;
+									}
+							</script>
+						</button>
+						<h1>
+							Texto Azul
+						 </h1>
+						 <h2>
+						 		TEXTO 2
+						 </h2>
+						 <p>
+						 	la empresa se dedica a tecnologia y la tecnologia ha sido desarrollada por empresas 
+						 </p>
+			</body>
+</html
+>

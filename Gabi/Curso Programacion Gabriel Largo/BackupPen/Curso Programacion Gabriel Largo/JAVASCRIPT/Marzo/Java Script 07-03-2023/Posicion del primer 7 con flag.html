@@ -1,0 +1,27 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 07/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+								let i=0, v=[1,2,3,4,5,6,7,8,9,10], sietes=0;
+								let encontrado=false;
+								while(i<v.length && !encontrado)
+								{
+									if(v[i]==7)
+										encontrado=!encontrado;
+									else
+										i++;
+								}
+								if(encontrado)
+									document.write("el primer siete esta en la posicion " +i);
+								else
+									document.write("No hay ningun siete");
+						</script>
+				</body>
+	</html>

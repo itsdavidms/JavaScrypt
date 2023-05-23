@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<script>
+		function eliminarElemento()
+		{
+			document.getElementById("imgbox1").style.display="none";
+		}
+		function cambiarVisibilidad()
+		{
+			document.getElementById("imgbox2").style.visibility="hidden";
+		}
+		function restablecerElemento()
+		{
+			document.getElementById("imgbox1").style.display="block";
+			document.getElementById("imgbox2").style.visibility="visible";
+		}
+	</script>
+</head>
+<body>
+	<div id="imgbox1">
+		Box 1 <br/>
+			<img src="klematis_small.jpg" height="80" width="107"/><br/>
+			<input onclick="eliminarElemento()" value="Borrar" type="button"/>
+	</div>
+	<div id="imgbox2">
+		Box 2 <br/>
+			<img src="klematis3_small.jpg" height="80" width="107"/><br/>
+			<input onclick="cambiarVisibilidad()" value="Esconder" type="button"/>
+	</div>
+	<div id="imgbox3">
+		Box 3 <br/>
+			<img src="klematis4_small.jpg" height="80" width="107"/><br/>
+			<input onclick="restablecerElemento()" value="Restablecer" type="button"/>
+	</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<title>	
+			JAVA SCRIPT 24/02/2023 
+</title>
+<meta charset="UTF-8">
+<head>
+</head>
+<body>
+	<script>
+		let palabras=new Array();
+		palabras[0]="Azul";
+		palabras[1]="Rojo";
+		palabras[2]="Amarillo";
+		palabras[3]="Majenta";
+		palabras[4]="Azul Marino";
+		//palabras[5]="Verde";
+		//palabras[6]="Negro";
+		//palabras[7]="Blanco";
+		let respuesta=prompt("Que color te gusta mas a ti?");
+		let colorElegido=palabras[Math.floor(Math.random()*palabras.length)];
+		let coincide=respuesta==colorElegido;
+		console.log(colorElegido);
+		console.log(coincide);
+		
+		if(coincide)
+		{
+			document.write("Que bien ");
+		}
+
+		document.write(" a mi ")
+		if(coincide)
+			{
+				document.write("tambien  ")
+	}
+	document.write("me gusta el color " +colorElegido)
+	
+		
+	</script>
+</body>
+</html>

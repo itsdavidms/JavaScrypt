@@ -1,0 +1,32 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 03/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+							let x= Math.floor(Math.random()*100)+1;
+							console.log(x);
+							let num=prompt("adivina el numero del (1 al 100)");
+							let num_intentos=1;
+							while((num!=x)&&(num_intentos<4))
+							{
+								if(x<num)
+										num=prompt("El numero aleatorio es menor,introduce otro");
+								else
+									 num=prompt("El numero aleatorio es menor,introduce otro");
+									num_intentos++;
+
+							}
+							if(num!=x)
+									alert("has fallado, el numero era "+x);
+							else
+									alert("acertaste el numero en" + num_intentos + "intentos");
+						</script>
+							
+				</body>
+	</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<title>	
+			JAVA SCRIPT 05/04/2023 
+</title>
+<meta charset="UTF-8">
+<head>
+</head>
+<body>
+	<div id="div1">
+		<p id="p1">Esto es un parrafo </p>
+		<p id="p2">Esto es otro parrafo </p>
+	</div>
+<script>	
+	function elimina()
+	 {
+		let parent=document.getElementById('div1');
+		let child=document.getElementById('p1');
+		if(child==undefined)
+			alert(kk);
+		else
+			parent.removeChild(child);
+	}
+</script>
+<button type="button" onclick="elimina()">Pincha</button>
+</body>
+</html>

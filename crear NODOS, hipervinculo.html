@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Crear NODOS (DOM) 
+	</title>
+		<p id="demo"> Haz click para crear un nuevo hipervinculo</p>
+		<button onclick="miFuncion()">Insertar hipervinculo</button><br/>
+	<script>
+		function miFuncion()
+		{
+
+			let enlace=document.createElement("a");
+			enlace.href=prompt("Donde quieres que vaya el hipervinculo","Inserte hipervinculo");
+			let t=document.createTextNode(prompt("Que texto quieres que haya en el hipervinculo",""));
+			enlace.appendChild(t); //enlace.tectContent="loquesea";
+			document.body.appendChild(enlace);
+			document.body.appenChild(document.createElement("br"));
+		}
+	</script>
+</body>
+</html>

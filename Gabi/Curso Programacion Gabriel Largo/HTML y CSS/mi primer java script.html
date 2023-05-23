@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<title>	DATOS </title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<img id="espacio" src="https://raw.githubusercontent.com/NestorPlasencia/img/master/sala.png"
+		style="background-color:red">
+		<input type="color" id="favcolor" value="#ff0000" onchange="cambiarcolor()"/>
+	<script>
+		function cambiarcolor() {
+			let color = document.getElementById("favcolor").value;
+			document.getElementById("espacio").style.backgroundColor = color;
+			
+		}
+	</script>
+	<input type="text" value="Hello Günter" name="text" size="30"><input type="submit" value="suubmit">
+</body>
+</html>
+
+
+		<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+					canvas html5
+				</canvas>
+	<script>
+				let c=document.getElementById("myCanvas");
+				let ctx=c.getContext("2d");
+				ctx.fillStyle="#FF0000";
+				ctx.fillRect(0,0,150,75)
+	</script>

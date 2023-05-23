@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+let miDesplegable;
+let miDiv;
+
+window.onload = function cargaDesplegable() {
+  miDesplegable = document.getElementById("desplegable");
+  let xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+      let miobjetoJson = JSON.parse(xmlhttp.responseText);
+      console.log(xmlhttp.responseText);
+      let pokemons = miobjetoJson.results;
+      for (let j = 0; j < pokemons.length; j++) {
+        let nombrePokemon = pokemons[j].name;
+        let option = document.createElement("option");
+        option.text = nombrePokemon;
+        option.value = pokemons[j].url;
+        miDesplegable.add(option);
+      }
+    }
+  };
+  xmlhttp.open("GET", "https://pokeapi.co/api/v2/pokemon?limit=200", true);
+  xmlhttp.send();
+}
+
+function cargaInfo() {
+  let xmlhttp = new XMLHttpRequest();
+  let indice = miDesplegable.selectedIndex;
+  let miDiv = document.getElementById("miDiv");
+  miDiv.textContent = "";
+  if (indice === -1) {
+    alert("Selecciona un pokemon de la lista");
+  } else {
+    let urlPokemonSeleccionado = miDesplegable.options[indice].value;
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        let miobjetoJson2 = JSON.parse(xmlhttp.responseText);
+        console.log("--›" + xmlhttp.responseText);
+        let habilidades = miobjetoJson2.abilities;
+        for (let j = 0; j < habilidades.length; j++) {
+          let p = document.createElement("p");
+          p.id = habilidades[j].ability.name;
+          p.textContent = habilidades[j].ability.name + " –› ";
+          miDiv.append(p);
+          muestraInfo(habilidades[j].ability.name, habilidades[j].ability.url);
+        }
+      }
+    };
+    xmlhttp.open("GET", urlPokemonSeleccionado, true);
+    xmlhttp.send();
+  }
+}
+
+function muestraInfo(id, url) {
+  let xmlhttp = new XMLHttpRequest();
+  let vectorIdiomas;
+  console.log("url –› " + url);
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+      let miobjetoJsonIdiomas = JSON.parse(xmlhttp.responseText);
+      vectorIdiomas = miobjetoJsonIdiomas.flavor_text_entries;
+      console.log("vectorIdiomas –› " + JSON.stringify(vectorIdiomas));
+      let i = 0;
+      while (i < vectorIdiomas.length && vectorIdiomas[i].language.name != "es") {
+        i++;
+      }
+      if (i < vectorIdiomas.length) {
+        console.log("salida –› " + vectorIdiomas[i].flavor_text);
+        document.getElementById(id).textContent += vectorIdiomas[i].flavor_text;
+      } else {
+        return "N/A";
+      }
+    }
+  };
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<select id="desplegable" onchange="cargaInfo()"></select>
+<div id="miDiv"></div>
+</body>
+</html>

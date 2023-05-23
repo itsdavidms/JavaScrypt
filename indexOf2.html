@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		indexOf
+	</title>
+</head>
+<body>
+	<script>
+		let v=[2,4,6,8,9,6,5,8,7,6], i=0;
+		i=v.indexOf(6,0);
+		while(i!=-1)
+		{
+			document.write(i+", ");
+			i=v.indexOf(6,i+1);
+		}
+	</script>
+</body>
+</html>

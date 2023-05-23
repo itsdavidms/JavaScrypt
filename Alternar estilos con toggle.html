@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Alternar dos estilos diferentes con "toggle"
+    </title>
+    <meta charset="UTF-8">
+    <style>
+      .miestilo {
+        width:300px;
+        height:50px;
+        background-color: coral;
+        color: white;
+        font-size: 25px;
+      }
+      .miOtroEstilo {
+        height: 100px;
+        background-color: lightblue;
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+    <body>
+      <p> Haz click en el boton para alternar entre las dos clases </p>
+      <button onclick="miFuncion()"> Pincha </button>
+      <div id="miDIV" class="miestilo">
+        ESTO ES UN DIV
+      </div>
+    <script>
+     function miFuncion()
+     {
+      console.log(document.getElementById("miDIV").classList);
+      document.getElementById("miDIV").classList.toggle("miOtroEstilo");
+    }
+</script>
+</body>
+</html>

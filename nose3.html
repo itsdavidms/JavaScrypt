@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+     window.onload = function(){
+      document.onmousemove= muestrainfo
+     }
+     function muestrainfo(ElEvento){
+      let x = ElEvento.clientX;
+      let y = ElEvento.clientY;
+      let xScreen= ElEvento.screenX;
+      let yScreen= ElEvento.screenY;
+      document.getElementById("demo").textContent= "X: "+x+"/"+window.innerWidth+" , Y: "+y+"/"+window.innerHeight;
+      document.getElementById("demo2").textContent= "XScreen: "+xScreen+"/"+screen.width+", yScreen: "+yScreen+"/"+screen.height
+     }
+    </script>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <div id="demo2"></div>
+  </body>
+</html>

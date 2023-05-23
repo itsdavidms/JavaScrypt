@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Cambiar el botón y el hipervínculo con variable flag
+	</title>
+</head>
+<body>
+	<a id="link" href="http://www.google.com"> Enlace a </a>
+	<button id="boton" onclick="miFuncion()">Google</button>
+	<script>
+		let flag=true;
+		//Si pongo esto aquí, en lugar de dentro de la función, será más eficiente
+		//let enlace=document.getElementById("link");
+		function miFuncion() {
+			let enlace=document.getElementById("link");
+			if(flag)
+			{
+				enlace.href="http://infolibre.es";
+				document.getElementById("boton").textContent="infolibre";
+			}
+			else
+			{
+				enlace.href="http://www.google.com";
+				document.getElementById("boton").textContent="google";
+			}
+			flag=!flag;
+		}
+	</script>
+</body>
+</html>

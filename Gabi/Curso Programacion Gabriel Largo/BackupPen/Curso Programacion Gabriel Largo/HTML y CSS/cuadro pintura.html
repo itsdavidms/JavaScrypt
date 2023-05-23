@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+	<title>	
+			HTML5 
+	</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		body
+		{
+			font-size: 70%;
+			font-family: verdana,helvetica,arial,sans-serif;
+		}
+	</style>
+</head>
+		<body style="margin: 0px;">
+	<script>
+			fuction cnvs_getCoordinates(e)
+			{
+				let x=e.clientX;
+				let x=e.clientY;
+				document.getElementById("xycoordinate").innerHTML=
+				"Cordenadas:("+ x +","+ y +")";
+			}
+			fuction cnvs_clearCoordinates()
+			{
+				document.getElementById("xycoordinate").innerHTML="";
+			}
+	</script>
+				<div id="coordiv" style="width: 199px; height: 99px; border: 1px salid #c3c3c3;" onmousemove="cnvs_getCoordinates(event)" onmousemove="cnvs_clearCoordinates">
+				</div>
+				<br/>
+				<br/>
+				<br/>
+				<div id="xycoordinates"></div>
+			</body>
+
+		</body>
+</html>

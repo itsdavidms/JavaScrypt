@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		EJERCICIO DESPLEGABLE
+	</title>
+</head>
+<body>
+<select id="productos"></select>
+<p id="info"> </p>
+	<script>
+		let productos={
+			"Camiseta":{
+					"descripcion":"Camiseta molona",
+					"precio":2,
+					"calificaciones":5,
+					"vendidas":2000,
+					"imagen":"camiseta.jpg"
+			},
+				"Pantalon":{
+					"descripcion":"Pantalon molon",
+					"precio":4,
+					"calificaciones":3,
+					"vendidas":200,
+					"imagen":"pantalon.jpg"
+			},
+				"Falda":{
+					"descripcion":"Falda molona",
+					"precio":3,
+					"calificaciones":4,
+					"vendidas":300,
+					"imagen":"falda.jpg"
+			},
+		};
+		let desplegable=document.getElementById("productos");
+		let info=document.getElementById("info");
+		let htmlDesplegable=`<option disabled selected="selected" hidden="hidden" value="">--Selecciona una opción--</option>`;
+		for (let producto in productos){
+			console.log(producto);
+			htmlDesplegable+=`<option value=${producto}>${producto}</option>`;
+		}
+		desplegable.innerHTML=htmlDesplegable;
+		desplegable.onchange=function(){
+			let valorSeleccion=desplegable.value;
+			info.innerHTML=productos[valorSeleccion].descripcion;
+			info.innerHTML+="<br/><img src='"+productos[valorSeleccion].imagen+"' width='150'/>"
+			console.log(`${desplegable.value}`)
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 15/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+					let traductor=
+					{
+						"uno":{"ingles" : "one","aleman": "eins","frances":"un"}, 
+						"dos":{"ingles" : "two","aleman": "zwei","frances":"Deux"}, // no hace falta que este en orden
+						"tres":{"ingles" : "three","aleman": "drei","frances":"trois"},
+					}
+					let seleccion,idioma,palabraAtraducir;
+					do
+					{
+						seleccion=prompt("1.-Traducir \n 2.- Salir \n");
+						switch(seleccion)
+						{
+						case "1":palabraAtraducir=prompt("Introduce palabra en castellano");
+							idioma=prompt("Introduce idioma ingles/frances/aleman");
+							if(traductor[palabraAtraducir][idioma]!=undefined)
+								alert(palabraAtraducir+ " se dice " + traductor[palabraAtraducir][idioma]+ " en "+idioma)
+							break;
+						case"2":alert("Hasta luego")
+						}
+					}while(seleccion=!'2')
+					
+						
+
+						</script>
+					Adios
+					
+				</body>
+	</html>

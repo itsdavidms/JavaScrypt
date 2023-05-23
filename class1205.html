@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Clases con atributos dentro de sus atributos </title>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400"></canvas>
+<script>
+  class Punto {
+    constructor(x=0,y=0){
+      this._x=x;
+      this._y=y;
+    }
+    desplazar(dx,dy) {
+      this._x+=dx;
+      this._y+=dy;
+    }
+    toString() {
+      return 'X:'+this._x+' Y:'+this._y;
+    }
+  }
+  //Podemos probarlo con 
+  let p1=new Punto(2,4);
+  alert(p1);
+  p1.desplazar(4,6);
+  alert(p1);
+  class Rectangulo {
+    //Tambien podria haber puesto constructor(punto=new Punto(),alto=0,ancho=0)
+    constructor(punto=newPunto(0,0),alto=0,ancho=0) {
+      this._origen=punto;
+      this._alto=alto;
+      this._ancho=ancho;
+    }
+    set alto(value) {
+      alert("asigno el alto");
+      this._alto=value;
+    }
+    set ancho(value=0){
+      this._ancho=value;
+    }
+    calcularArea(){
+      alert("estoy calculando el area");
+      return this._alto*this._ancho;
+    }
+    //nos creamos ademas un get para un atributo virtual area (el ejemplo no tiene sentido porque ya tenemos el metodo arriba)
+    get area() {
+      return this._alto*this._ancho;
+    }
+    desplazar(dx,dy){
+      this._origen.desplazar(dx,dy);
+    }
+    estaDentro(x1,y1){
+      if((x1>this._origen._x)&&(x1<this._origen._x+this._ancho)&&(y1>this._origen._y)&&(y1<this._origen._y+this._alto)){
+        return true;
+      }
+      return false;
+    }
+    toString(){
+      return this._origen+"\nancho:"+this._ancho+"\nalto:"+this._alto;
+    }
+  }
+  let miPunto=new Punto(2,3);
+  let r1=new Rectangulo(miPunto,2,4);
+  r1.alto=10;
+  r1.ancho=20;
+  alert("el area del rectangulo es: "+r1.calcularArea());
+  //mostramos el area a traves del getter del atributo virtual area
+  alert("el area del rectangulo es a traves de getter es: "+r1.area);
+  alert(r1);
+  r1.desplazar(5,6);
+  alert(r1);
+  if(r1.estaDentro(8,10))
+    alert("el punto esta dentro");
+  else
+    alert("el punto no esta dentro");
+  let r2=new Rectangulo();
+  alert(r2);
+</script>
+</body>
+</html>

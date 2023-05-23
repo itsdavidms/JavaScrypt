@@ -1,0 +1,36 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 07/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+								let i , v=[1,2,3,4,5,6,7,9,10,], mayor,posi;
+								//let posicion=false;
+								mayor=v[0];
+								i= 1 ;
+								posi=0;
+								console.log(posi)
+								while(i<v.length)
+								{
+									if(v[i]>mayor)
+									{
+										mayor=v[i];
+										posi= i;
+									}
+										
+									i++;
+								}
+
+								document.write("El elemento mayor es el " +mayor+ "<br/>")
+								//document.write("esta en la posi "+i+ "<br/>");
+								document.write("esta en la posi "+posi);
+								
+
+						</script>
+				</body>
+	</html>

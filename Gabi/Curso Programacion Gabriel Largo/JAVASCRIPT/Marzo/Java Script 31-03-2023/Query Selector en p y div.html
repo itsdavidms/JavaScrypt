@@ -1,0 +1,38 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 31/03/2023 
+				</title>
+						<meta charset="UTF-8">
+<style>
+	.ejemplo{
+		border: 1px solid black;
+		margin: 5px;
+	}
+</style>
+		</head>
+				<body>
+				<div class="ejemplo">
+					Un div con clase ejemplo
+				</div>
+				<div class="ejemplo">
+					Otro div con clase ejemplo
+				</div>
+				<p class="ejemplo">Un div con clase ejemplo</p>
+				<p class="ejemplo">Un p con clase ejemplo </p>
+				<p> Esto es un elemento <span class="ejemplo">span</span> con class="ejemplo" dentro de un p </p>
+				<p>Haz click en el boton para cambiar el color</p>
+				<butto class="ejemplo" onclick="miFuncion()">Pincha</butto>
+						<script>
+								function miFuncion() 
+								{
+									let elementosClasesEjemplo= document.querySelectorAll(".ejemplo");
+									let i;
+									for(i=0;i<elementosClasesEjemplo.length; i++){
+										elementosClasesEjemplo[i].style.backgroundColor="blue";
+									}
+								}
+						</script>
+				</body>
+	</html>

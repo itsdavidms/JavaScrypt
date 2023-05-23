@@ -1,0 +1,28 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 01/04/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+					<div id="div1">
+						<p id="p1">Esto es un parrafo. </p>
+						<p id="p2">Esto es otro parrafo. </p>
+					</div>
+				
+						<script>
+						function escribeAlgo()
+					 {
+						let para=document.createElement("p");
+						let nodoTexto=document.createTextNode("Esto es nuevo");
+						para.appendChild(nodoTexto);
+						let miDiv=document.getElementById("div1");
+						miDiv.appendChild(para);
+					}		
+						</script>
+						<button type="button" onauxclick="escribeAlgo()">Pincha</button>
+				</body>
+	</html>

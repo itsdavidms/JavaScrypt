@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		EJERCICIO TRADUCCION
+	</title>
+</head>
+<body>
+	<script>
+		let traductor={
+			"uno":{"ingles":"one", "aleman":"eins", "frances": "un"},
+			"dos":{"aleman":"zwei", "frances":"deux", "ingles":"deux"}, // No tienen que estar en el mismo orden
+			"tres":{"ingles":"three", "aleman":"drei", "frances":"trois"},
+		}
+		let seleccion, idioma, palabraATraducir;
+		do{
+			seleccion=prompt("1.- Traducir\n2.- Salir\n");
+			switch(seleccion){
+			case "1":palabraATraducir=prompt("Introduce la palabra a traducir en castellano");
+				idioma=prompt("Introduce el idioma a traducir Ingles/aleman/frances");
+				if(traductor[palabraATraducir][idioma]!= undefined)
+					alert(`${palabraATraducir} se dice ${traductor[palabraATraducir][idioma]} en ${idioma}`)
+				break;
+			case "2":alert("Hasta luego");
+			}
+		} while(seleccion!='2');
+	</script>
+	Adios
+</body>
+</html>

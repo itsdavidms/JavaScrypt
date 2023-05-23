@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Acceso a la cámara web</title>
+</head>
+<body>
+<video id="videoElement" autoplay></video>
+
+<script>
+// Obtén una referencia al elemento de video
+const video = document.getElementById('videoElement');
+
+// Verifica si el navegador es compatible con la API de getUserMedia
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  // El navegador es compatible
+  // Solicita acceso a la cámara web
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function(stream) {
+      // Establece el origen del video como el flujo de la cámara web
+      video.srcObject = stream;
+    })
+    .catch(function(error) {
+      // Ocurrió un error al acceder a la cámara web
+      console.error('Error al acceder a la cámara web:', error);
+    });
+} else {
+  // El navegador no es compatible con la API de getUserMedia
+  console.error('El navegador no es compatible con la API de getUserMedia');
+}
+</script>
+</body>
+</html>

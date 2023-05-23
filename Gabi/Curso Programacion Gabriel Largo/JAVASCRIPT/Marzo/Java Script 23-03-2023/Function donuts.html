@@ -1,0 +1,33 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 23/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+					
+						<script>
+						function meComoUnDonut(cantidad)
+							{
+							alert("me como un donut " +cantidad);
+							}
+						function comerDonuts(cantidad) 
+					{
+						if(cantidad==0)
+							{
+							alert("Ya acabe de comer donuts");
+							}
+						else
+							{
+							meComoUnDonut(cantidad);
+							comerDonuts(cantidad-1);
+							alert("acaba la llamada de " +cantidad+ " de donuts");
+							}
+					}
+					comerDonuts(prompt("cuantos dotus quieres que me coma?"));
+						</script>
+				</body>
+	</html>

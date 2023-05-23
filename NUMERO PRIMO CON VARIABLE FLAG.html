@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<body>
+	<script>
+		let num,i,mitad;
+		let primo=true;
+		num=prompt("Introduce el numero");
+		i=2;
+		mitad=num/2;
+		while((i<=mitad)&&(primo))
+		{
+			if(num%i==0)
+				primo=false;
+			i++;
+		}
+		if(primo&&num!=1)
+			alert("Nº primo");
+		else
+			alert("Nº no primo");
+	</script>
+</body>
+</html>

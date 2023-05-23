@@ -1,0 +1,24 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 0/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+					<p> Pincha en el boton para rermplaza "Microsoft" con " Viva JavaScript!!!"
+						<p id="demo">Visita Microsoft! </p>
+						<button onclick="miFuncion()">Pincha Aqui</button>
+						<script>
+							let palabrita=prompt("Sustituye la palabra que quieras 'Visita'");
+							function miFuncion()
+							{
+								let str=document.getElementById("demo").innerHTML;
+								let n=str.replace("Microsoft",palabrita);
+								document.getElementById("demo").innerHTML=n;
+							}
+						</script>
+				</body>
+	</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 21/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+								function esPrimo(num) 
+								{
+								let i=2
+								let mitad=num/2
+								while(i<=mitad && num%i!=0)
+									i++;
+								if(i>mitad && num!=1)
+									return true;
+								else
+									return false;
+								}
+								while(primos<100)
+								{
+									if(esPrimo(i))
+									{
+										document.write(i);
+										primos++;
+									}
+									i++;
+								}
+						</script>
+				</body>
+	</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF=8">
+	<meta name="viewport2" content="width=device-width, initial-scale=1.0">
+	<style>
+		body
+		{
+			background:green;
+		}
+		.aparece
+		{
+			display:none;
+		}
+		.oculta
+		{
+			width:50%;
+			height:120px;
+			background: yellow;
+			margin:auto;
+		}
+		@media (max-width:600px)
+		{
+			body
+			{
+				background:red;
+			}
+			.oculta
+			{
+				display:none;
+			}
+			.aparece
+			{
+				display:block;
+				width:50%;
+				height:50%;
+				background:green;
+				color:#ffffff;
+				margin:auto;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="oculta"></div>
+	<div class="aparece">Hola a todos</div>
+</body>
+</html>

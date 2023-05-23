@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Ejercicio 
+	</title>
+</head>
+<body>
+	<script>
+		let numero, inicio, mitad, fin, i=0, v=[2,5,8,22,44,65];
+		document.write(v);
+		numero=prompt("Introduce el numero a insertar");
+		inicio=0;
+		fin=v.length-1;
+		mitad=Math.floor((inicio+fin)/2);
+		while((inicio<=fin)&&(v[mitad]!=numero))
+		{
+			console.log(`inicio:${inicio} , fin:${fin} , mitad: ${mitad}`);
+			if(v[mitad]>numero)
+				fin=mitad-1;
+			else
+				inicio=mitad+1;
+			mitad=Math.floor((inicio+fin)/2);
+		}
+		if(inicio>fin)
+			console.log("\nEl elemento no está\n");
+		else 
+			console.log("El "+numero+"esta en la posicion "+mitad);
+		document.write(v)
+	</script>
+</body>
+</html>

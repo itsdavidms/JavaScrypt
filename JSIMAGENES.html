@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script>
+	let pregunta="Cuanto es 20 + 20";
+	let respuestaBuena=40;
+	let correcto='<img src="https://media3.giphy.com/media/LmqitTYGsNMiWu3VWO/giphy.gif?cid=ecf05e473rbilj19ybs1ubt58n3olufehv760kyijndstk9z&rid=giphy.gif&ct=g">';
+	let incorrecto='<img src="https://www.nicepng.com/png/detail/24-241533_emoji-mano-en-la-cara.png">';
+	let respuesta=prompt(pregunta,"0");
+	let salida=(respuesta==respuestaBuena)?correcto:incorrecto;
+</script>
+</head>
+<body>
+	<script>
+		document.write(salida);
+	</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="300" style="border:1px solid #000000;"></canvas>
+<script>
+  let c=document.getElementById("myCanvas");
+  let contexto=c.getContext("2d");
+  
+  class Posicion{
+    constructor(x1,y1){
+      this.x=x1;
+      this.y=y1;
+    }
+    desplazar(dx,dy){
+      this.x+=dx;
+      this.y+=dy;
+    }
+  }
+  class Arma{
+    constructor(nombreArma,danyoArma,escudoArma,duracionArma){
+      this.nombre=nombreArma;
+      this.danyo=danyoArma;
+      this.escudo=escudoArma;
+      this.duracion=duracionArma;
+    }
+    restarTiempo(){
+      if(this.duracion>0)
+        this.duracion--;
+    }
+  }
+  class Ira{
+    constructor(valor,duracion){
+      this.duracion=duracion;
+      this.valor=valor;
+    }
+    restarTiempo(){
+      if(this.duracion>0)
+        this.duracion--;
+      else
+        this.valor=0;
+    }
+  }
+  class Fuerza{
+    constructor(ira,fuerzaNatural,magia){
+      this.ira=ira;
+      this.fuerzaNatural=fuerzaNatural;
+      this.magia=magia;
+    }
+    calcularFuerzaTotal(){
+      return this.fuerzaNatural+this.ira.valor+this.magia.valor;
+    }
+  }
+  class Magia{
+    constructor(duracion,valor){
+      this.duracion=duracion;
+      this.valor=valor;
+    }
+    restarTiempo(){
+      if(this.duracion>0)
+        this.duracion--;
+      else
+        this.valor=0;
+    }
+  }
+    class WarriorClan {
+      constructor(nombre,color){
+        this.nombre=nombre;
+        this.coor=color;
+        this.guerreros=new Array(); //this.guerreros=[];
+      }
+      addWarrior(guerrero){
+        this.guerreros.push(guerrero);
+      }
+      eliminar(guerrero){
+        let index=this.guerreros.indexOf(guerrero);
+        //el metodo splice: vec.splice(1,3); Estamos indicando que a partir del elemento de la posicion 1 elimine 3 elementos.
+        //Hay que tener en cuenta que el metodo splice devuelve un vector con los elementos borrados.
+        this.guerreros.splice(index,1);
+      }
+      mostrarGuerreros(){
+        let i;
+        for(i=0;i<this.guerreros.length;i++){
+          console.log("guerrero "+i+":\nVida:"+this.guerreros[i].vida+"\nPosicion:"+this.guerreros[i].posicion.x+","+this.guerreros[i].posicion.y+"\n"+"Arma1:"+this.guerreros[i].armamento[0].nombre+"\n\n");
+          this.guerreros[i].dibujar();
+        }
+      }
+    }
+    class Guerrero{
+      //let that=this;
+      constructor(posicion,vida,fuerza){
+        this.that=this;
+        this.imagen=new Image();
+        /*Function.prototype.bind() es un metodo del objeto Function creado para manipular el valor contextual de this. Cuando se ejecuta sobre una funcion dada, creamos una nueva funcion que nos permite manipular tanto su valor this como los parametros que espera.*/
+        this.imagen.src='http://www.sacredwiki.org/images/Sacred_2/sets/SW/armantin.gif';
+        this.armamento=new Array();
+        this.imagen.onload=function(){
+          this.dibujar();
+        }.bind(this);
+        /*Codigo actualizado con la funcion flecha:
+        this.imagen.onload=()=>{
+          this.dibujar();
+        }; */
+        this.vida=vida;
+        this.posicion=posicion;
+        this.fuerza=fuerza;
+      }
+      dibujar(){
+      try{
+          contexto.drawImage(this.imagen, this.posicion.x, this.posicion.y, this.imagen.width/10,this.imagen.height/10)
+          contexto.fillStyle = "#00FF00";
+          contexto.fillRect(this.posicion.x,(this.posicion.y)-4,this.fuerza.calcularFuerzaTotal(),3)
+          contexto.fillStyle = "#0000FF"
+          contexto.fillRect(this.posicion.x,(this.posicion.y)-8,this.vida/10,3)
+          }catch (e) {alert(e);}
+    }
+    addArmor(arma){
+      //Me creo un clon del arma con sus atributos para que no me cambie el objeto en si, sino su clon.
+      let armaaux=new Arma(arma.nombre, arma.danyo, arma.escudo, arma.duracion);
+      this.armamento.push(armaaux);
+    }
+    desplazar(dx,dy){
+      this.posicion.desplazar(dx,dy);
+    }
+  }
+  window.onload=function(){
+    let thugLife=new WarriorClan("ThugLife","negro");
+    let gladiador;
+    let armas=[];
+    armas.push(new Arma("Puñal trapero",3,0,-1));
+    armas.push(new Arma("Lanza",10,2,1000));
+    armas.push(new Arma("Espada",7,1,1000));
+    armas.push(new Arma("Ballesta",20,0,1000));
+    for(let i=0;i<10;i++)
+    {
+      let fuerzaAux=new Fuerza(new Ira(0,0),parseInt(Math.random()*30),new Magia(0,0));
+      gladiador=new Guerrero(new Posicion(parseInt(Math.random()*300),parseInt(Math.random()*250)),200,fuerzaAux);
+      gladiador.addArmor(armas[parseInt(Math.random()*armas.length)]);
+      thugLife.addWarrior(gladiador);
+    }
+    thugLife.mostrarGuerreros();
+  }
+</script>
+</body>
+</html>

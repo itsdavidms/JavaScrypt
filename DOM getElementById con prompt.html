@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+	<script>
+		function displayNombre()
+		{
+			let nombre=prompt("Dime tu nombre");
+			alert("hola "+nombre);
+			document.getElementById("demo").textContent="Hola "+nombre;
+		}
+	</script>
+</head>
+<body>
+	<h1> Ejemplo Javascript de getElementById </h1>
+	<p id="demo"></p>
+	<button type="button" onlick="displayNombre()"> Pedir Nombre </button>
+	
+</body>
+</html>

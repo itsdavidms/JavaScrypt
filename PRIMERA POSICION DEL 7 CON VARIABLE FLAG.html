@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<script>
+			let i=0, v=[1,2,3,4,5,6,7,8,7];
+			let encontrado=false;
+			while (i<v.length&&!encontrado)
+			{
+				if(v[i]==7)
+					encontrado=!encontrado;
+				else
+					i++;
+			}
+			if(encontrado)
+				document.write("El primer siete está en la posicion"+i);
+			else
+				document.write("No hay ningun siete");
+		</script>	
+	</body>
+</html>

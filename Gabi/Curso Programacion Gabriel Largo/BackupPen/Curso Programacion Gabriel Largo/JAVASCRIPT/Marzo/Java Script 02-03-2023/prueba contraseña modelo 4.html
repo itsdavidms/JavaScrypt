@@ -1,0 +1,29 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						Prueba 4
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+							const contrasenya="1234";
+							let num_intentos=0,num,usuario;
+							usuario=prompt("Introduce tu usuario");
+							num=prompt("Introduce la contraseña","");
+							num_intentos=1;
+							while((num!=contrasenya)&&(num_intentos<3))
+							{
+							  num_intentos++;
+							}
+							if(num!=contrasenya)
+								alert("has fallado ");
+							else
+								alert("acertaste la contraseña");
+							document.write(`Bienvenido ${usuario}`)
+						</script>
+							
+				</body>
+	</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Alternar estilos agregando y eliminando clases con 'classList' (add/remove)
+    </title>
+    <meta charset="UTF-8">
+    <style>
+      .miClase {
+        width:500px;
+        height:50px;
+        padding:15px;
+        border:1px solid black;
+        background-color: coral;
+        color: white;
+        font-size: 25px;
+      }
+      .otraClase {
+        background-color: coral;
+        color:white;
+
+      }
+        .terceraClase {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+    <body>
+      <p> Haz click en el boton para añadir varias clases </p>
+      <button onclick="addEstilo()"> Añade estilo </button>
+      <button onclick="eliminarEstilo()"> Elimina estilo </button>
+      <div id="miDIV" class="miClase">
+        Esto es un div
+      </div>
+    <script>
+     function addEstilo() {
+      document.getElementById("miDIV").classList.add("otraClase","terceraClase");
+    }
+    function eliminarEstilo() {
+      document.getElementById("miDIV").classList.remove("miClase");
+    }
+</script>
+</body>
+</html>

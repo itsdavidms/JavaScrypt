@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		EJERCICIO TRADUCCION (VECTOR ASOCIATIVO)
+	</title>
+</head>
+<body>
+	<script>
+		let lista=new Array();
+		lista["uno"]="one";
+		lista["dos"]="two";
+		lista["tres"]="three";
+		lista["cuatro"]="four";
+		lista["cinco"]="five";
+		let tradu=prompt("1.- Traducir\n 2.- Salir\n");
+		if(tradu!="2"){
+			i=prompt("Que numero deseas traducir?")
+			for(let i in lista)
+			alert(`La traduccion de ${i} es ${lista[i]}`);
+		}
+		 else alert("Has elegido salir");
+	</script>
+</body>
+</html>

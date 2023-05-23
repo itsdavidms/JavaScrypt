@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		</head>
+	<body>
+		<script>
+			let aleatorio=Math.floor(Math.random()*10)+1;
+			let respuesta=prompt("0:adivina el numero del (1 al 10)");
+			let intentos=1;
+			while(respuesta!=aleatorio)
+			{
+				respuesta=prompt(intentos+":ERROR, prueba otra vez(1 a 10):");
+				intentos++;
+			}
+
+			alert("Has acertado en "+intentos+" intentos");
+		</script>
+	</body>
+</html>

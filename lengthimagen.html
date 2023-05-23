@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<body>
+		<script>
+			let i=0;
+			let imagenes=[];
+			while(i<3)
+			{
+				imagenes[i]=prompt("Introduce el nombre de una imagen");
+				i=i+1;
+			}
+			i=0;
+			while(i<imagenes.length)
+			{
+				document.write("<img src='"+imagenes[i]+"' width='150'/>");
+				i=i+1;
+			}
+		</script>
+	</body>
+</html>

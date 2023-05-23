@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<title>	
+			JAVA SCRIPT 22/02/2023 
+</title>
+<meta charset="UTF-8">
+</head>
+<body>
+	<script>
+		let i=0
+		let imagenes=[];
+		while(i<=9)
+		{
+			imagenes[i]="<img src='./numeros/"+i+".gif' width='50'/>"
+			i=i+1;
+		}
+		console.log(imagenes);
+		let numero=prompt("Introduce un numero de dos digitos");
+		let aux=(numero-numero%10)/10;
+		document.write(imagenes[aux]);
+		document.write(imagenes[numero%10])
+	</script>
+</body>
+</html>

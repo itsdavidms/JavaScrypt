@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Acceder a los atributos del elemento mediante .target
+	</title>
+</head>
+<body onclick="miFuncion(event)">
+	<p> Haz click en cualquier elemento y sabras sobre que elemento se lanzo el evento onclick </p>
+	<h1> Esto es una cabecera </h1>
+	<button> Esto es un boton </button>
+	<span> Esto es un span </span>
+	<p id="demo"></p>
+	<script>
+		function miFuncion(elEvento) {
+			let x=elEvento.target;
+			document.getElementById("demo").innerHTML="Generado por un elemento " +x.tagName;
+		}
+	</script>
+</body>
+</html>

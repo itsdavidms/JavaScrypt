@@ -1,0 +1,29 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 06/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+							let aux,final;
+							inicial=prompt("Introduce un numero");
+							aux=inicial;
+							final=0;
+							while(aux>0)
+							{
+								final=(final*10)+aux%10;
+								aux=parseInt(aux/10);
+							}
+							if(final==inicial)
+								alert("Capicua")
+							else
+								alert("No Capicua")
+							alert(final+"-->" +inicial)
+
+						</script>
+				</body>
+	</html>

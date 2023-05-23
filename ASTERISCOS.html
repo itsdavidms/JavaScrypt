@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+			ASTERISCOS
+		</title>
+			<meta charset="UTF-8">
+		</head>
+	<body style="font-family:'Lucida Console', monospace;">
+		<script>
+			let num,asteriscosQueTengoDibujados=0,cuadrado;
+			num=prompt("Introduce el numero de asteriscos que deseas dibujar");
+			cuadrado=num*num;
+			while(asteriscosQueTengoDibujados<cuadrado)
+			{
+				document.write("*");
+				asteriscosQueTengoDibujados++;
+				if(asteriscosQueTengoDibujados%num==0)
+					document.write("<br/>");
+			}
+			alert("Gracias por utilizar nuestro SW\nQue tenga usted un buen dia");
+		</script>
+	</body>
+</html>

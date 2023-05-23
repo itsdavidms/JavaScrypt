@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    
+    <script>
+      class rectangulo{
+        constructor (x=0,y=0, alto=0, ancho=0){
+          this._x=x;
+          this._y=y;
+          this._ancho=ancho;
+          this._alto=alto;
+        }
+        set alto(value){
+          alert("asigna el alto");
+          this._alto= value;
+        }
+        calcularArea(){
+          alert("Estoy calculando el area");
+          return this._alto * this._ancho;
+        }
+        desplazar(dx,dy){
+          this._x+=dx;
+          this._y=dy;
+        }
+        mostrar(){
+          alert("X: "+this._x+"\nY: "+this._y+"\nancho: "+this._ancho+"\nalto: "+this._alto);
+        }
+      }
+      let r1 = new rectangulo(0,0,2,4);
+      r1.alto=10;
+      alert(r1._alto);
+    </script>
+  </body>
+</html>

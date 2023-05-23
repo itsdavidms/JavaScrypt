@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Pokemón</title>
+		<style>
+			body
+				{
+				text-align:center; color:#021463;
+				}
+		</style>
+	</head>
+<body>
+	<h3>· P O K E M Ó N ·</h3>
+		<script>
+			let pokemon=["Pikachu","Charizard","Onix","Sharkpedo","Beedrill"];
+			let imagenPokemon=new Array();
+			imagenPokemon[0]="<img src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png' width=20% height=20%/>";
+			imagenPokemon[1]="<img src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png' width=20% height=20%/>";
+			imagenPokemon[2]="<img src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/095.png' width=20% height=20%/>";
+			imagenPokemon[3]="<img src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/319.png' width=20% height=20%/>";
+			imagenPokemon[4]="<img src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/015.png' width=20% height=20%/>";
+			pokemonElegido=[Math.floor(Math.random()*pokemon.length)];
+			let salida=pokemon[pokemonElegido];
+			document.write(salida);
+			document.write("<br/>"+imagenPokemon[pokemonElegido]);
+			let fuerza=Math.floor(Math.random()*20)+1;
+			document.write(`<br/><meter value="${fuerza}" min="0" max="20"></meter><br/>`);
+			document.write("<br/>Fuerza="+fuerza);
+		</script>
+</body>

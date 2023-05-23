@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+			VARIANTE DE ASTERISCOS
+		</title>
+			<meta charset="UTF-8">
+		</head>
+	<body style="font-family:'Lucida Console', monospace;">
+		<script>
+			let fila, num, col;
+			fila=1
+			num=prompt("Introduce el numero de asteriscos que deseas dibujar");
+			while(fila<=num)
+			{
+				col=1;
+				while(col<=num)
+				{
+					if(fila<col)
+						document.write("* ");
+					else
+						if(fila==col)
+							document.write("- ");
+						else
+							document.write("+ ");
+						col++;
+				}
+				document.write("<br/>");
+				fila++;
+			}
+		</script>
+	</body>
+</html>

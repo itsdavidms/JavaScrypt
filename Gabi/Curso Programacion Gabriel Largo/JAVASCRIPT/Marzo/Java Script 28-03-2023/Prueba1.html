@@ -1,0 +1,31 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 28/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+								function saluda() 
+								{
+									let nombre = prompt("Dime tu Nombre");
+									alert("hola " +nombre);
+									document.getElementById('demo').innerHTML="Hola " +nombre
+								}
+								function despide() 
+								{
+									let nombre = prompt("Dime tu Nombre");
+									alert("Adios " +nombre);
+									document.getElementById('demo').innerHTML="Adios " +nombre
+								}
+						</script>
+						<a href="#" onclick="saluda();return false;">Saluda</a>
+						<a href="#" onclick="despide();return false;">Despide</a>
+						<input type="text" onkeypress="return false">
+						<input type="text" onkeydown="return false">
+						<a href="https://www.google.com/" onclick="return false";>google</a>
+				</body>
+	</html>

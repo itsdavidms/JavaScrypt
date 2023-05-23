@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Crear class con atributos dentro  
+    </title>
+</head>
+  <body>
+    <script>
+      class Usuario {
+        nombre="Juan";
+        saluda(){
+          alert(`Hola,${this.nombre}!`);
+        }
+      }
+      let usuario=new Usuario();
+      usuario.saluda(); //Hola, Juan!
+      //Podemos hacer frikadas como esta.
+      new Usuario().saluda(); //Hola, Juan!
+    </script>
+ </body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Acceder al estilo con JS mediante los nodos (con variable flag) 
+	</title>
+</head>
+<body>
+	<p id="p1"> Esto es un texto. Esto es un texto. Esto es un texto. Esto es un texto. Esto es un texto. Esto es un texto. Esto es un texto. Esto es un texto. Esto es un texto. Esto es un texto. Esto es un texto. </p>
+	<input type="button" id="boton" value="Oculta" onclick="miFuncion()"/>
+	<script>
+		let oculta=false;
+		function miFuncion() {
+			if(oculta)
+			{
+				document.getElementById('p1').style.visibility='visible';
+				document.getElementById('boton').value="Oculta";
+			}
+			else
+			{
+				document.getElementById('p1').style.visibility='hidden';
+				document.getElementById('boton').value="Muestra";
+			}
+			oculta=!oculta;
+		}
+	</script>
+</body>
+</html>

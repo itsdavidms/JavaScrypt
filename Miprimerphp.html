@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cargando</title>
+	<script>
+		function llamada(){
+			let conexion=new XMLHttpRequest();
+			//antes de hacer la peticion al servidos, mostramos la imagen 
+			muestra();
+			//Ya podemos hacer la peticion ajax En este ejemplo al archivo Miprimerphp.php
+			conexion.open("GET","Miprimerphp.php",true);
+			conexion.onreadystatechange=function() {
+				if(conexion.readyState==4 && conexion.status==200) {
+					//en el momento que tenemos la respuesta del servidor ocultamos laimagen y mostramos la respuesta oculta();
+					document.getElementById("miDiv").innerHTML=conexion.responseText;
+				}
+			};
+			conexion.send()
+		}
+
+		function muestra() {
+			//Funcion para mostrar el div que contiene la imagen Loading
+			div=document.getElementById('miDivLoading');
+			div.style.display='block';
+		}
+
+		function oculta() {
+			//Funcion para ocultar el div que contiene la imagen Loading
+			div=document.getElementById('miDivLoading');
+			div.style.display='none';
+		}
+		window.onload=function(){
+			oculta();
+		};
+	</script>
+<style>
+	#miDiv {
+		width:300px;
+		height:50px;
+		border:1px solid black;
+		overflow: :hidden;
+	}
+</style>
+</head>
+<body>
+	<input type="button" value="Hacer algo" onclick="llamada()"/>
+	<div id="miDivLoading">
+		<img src="ajax-loader.gif"/>
+	</div>
+	<div id="miDiv"></div>
+</body>
+</html> 

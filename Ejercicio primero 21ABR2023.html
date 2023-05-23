@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+    <body>
+    <script>
+    let mivector=["uno","dos","tres"];
+    let x=3; //Dato primitivo, variable por valor(entera)
+     function miFuncion(v,x)
+     {
+    v[0]="one";
+    x=4; //La funcion intenta modificar la x pero a una copia
+    }
+   document.write("Valor del vector antes:"+mivector+"<br/><hr><br/>");
+    document.write("Valor de x antes:"+x+"<br/><hr/><br/>");
+ 
+   miFuncion(mivector,x);
+   document.write("Valor del vector despues:"+mivector+"<br/><hr><br/>");
+   document.write("Valor de x despues:"+x+"<br/><hr/><br/>");
+</script>
+  <img src="https://usuario4.neocities.org/Imagenes/Paso%20por%20referencia.jpg" width=60% height=15%>
+  </body>
+</html>

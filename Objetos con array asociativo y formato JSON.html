@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Añadir objeto con formato JSON
+    </title>
+</head>
+  <body>
+    <script>
+      let individuo={
+      "nombre":"Juan",
+      "edad":28,
+      "ciudad":"Palma de Malorca,ES",
+      "genero":"hombre",
+      "saludar":function(aquien) {
+        alert("Hola, soy "+this.nombre+ " de " +this.ciudad+", ¿Como estas "+aquien+ "?");
+      }
+      };
+      individuo.saludar("Paco");
+    </script>
+ </body>
+</html>

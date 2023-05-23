@@ -1,0 +1,40 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 28/02/2023 
+				</title>
+						<meta charset="UTF-8">
+							<style>
+								table,td,tr{
+									border: 1px solid black;
+								}
+								table{
+									border-collapse: collapse;
+								}
+							</style>
+
+		</head>
+				<body>
+						<script>
+								let i=0,numero,cadena="";
+								numero=prompt("Introduce un numero ")
+								cadena+="<table>"
+								while(i<10)
+								{
+									cadena+=`<tr>
+												<td>${numero}<td/>
+												<td> x <td/>
+												<td> ${i} <td/>
+												<td> = <td/>
+												<td> ${(numero*i)}<td/>
+												</tr>`				;
+									i++;
+
+								}
+								cadena+="<table>";
+								document.write(cadena);
+								alert("gracias por usar la tabla")
+						</script>
+				</body>
+	</html>

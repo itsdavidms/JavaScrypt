@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Div seleccionable</title>
+<style>
+#canvas {
+  background-color: #333;
+}
+</style>
+</head>
+<body>
+<canvas id="canvas" width="500" height="400"></canvas>
+
+<script>
+class Cuadrado {
+  constructor(x, y, ancho, alto, color, id) {
+    this.origen = { x: x, y: y };
+    this.ancho = ancho;
+    this.alto = alto;
+    this.color = color;
+    this.id = id;
+  }
+
+  estaDentro(x, y) {
+    return (x >= this.origen.x && x <= this.origen.x + this.ancho && y >= this.origen.y && y <= this.origen.y + this.alto);
+  }
+}
+
+const cuadrados = [
+  new Cuadrado(50, 50, 50, 50, "red", 1),
+  new Cuadrado(150, 50, 50, 50, "green", 2),
+  new Cuadrado(250, 50, 50, 50, "blue", 3),
+  new Cuadrado(350, 50, 50, 50, "yellow", 4)
+];
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+function dibujarCuadrados() {
+  cuadrados.forEach(function(cuadrado) {
+    ctx.fillStyle = cuadrado.color;
+    ctx.fillRect(cuadrado.origen.x, cuadrado.origen.y, cuadrado.ancho, cuadrado.alto);
+  });
+}
+
+dibujarCuadrados();
+
+canvas.addEventListener("click", function(event) {
+  const x = event.offsetX;
+  const y = event.offsetY;
+  
+  // Primero, repintamos toda la escena para borrar los bordes blancos de los cuadrados que se habían resaltado anteriormente
+  dibujarCuadrados();
+  
+  // Luego, buscamos el cuadrado en el que se ha hecho clic
+  for (let i = 0; i < cuadrados.length; i++) {
+    const cuadrado = cuadrados[i];
+    if (cuadrado.estaDentro(x, y)) {
+      // Si se ha hecho clic dentro del cuadrado, lo resaltamos con un borde blanco
+      ctx.strokeStyle = "white";
+      ctx.strokeRect(cuadrado.origen.x, cuadrado.origen.y, cuadrado.ancho, cuadrado.alto);
+      console.log("Clic en cuadrado " + cuadrado.id);
+      break;
+    }
+  }
+});
+</script>
+
+</body>
+</html>

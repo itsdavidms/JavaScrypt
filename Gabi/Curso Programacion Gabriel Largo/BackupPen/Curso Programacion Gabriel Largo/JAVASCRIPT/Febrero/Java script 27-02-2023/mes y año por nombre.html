@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+let mes, anyo, numDias=0, respuesta;
+mes=prompt("Introduce el nombre del mes","").toUpperCase();
+anyo=prompt("Introduce un anyo","");
+switch(mes)
+{
+		case "ENERO":
+		case "MARZO":
+		case "ABRIEL":
+		case "JULIO":
+		case "AGOSTO":
+		case "OCTUBRE":
+		case "DICIEMBRE":numDias=31;
+			respuesta="El mes "+ mes +" del anyo "+ anyo +" tiene "+ numDias +" días.";
+		break;
+		case "ABRIEL":
+		case "JUNIO":
+		case "SEPTIEMBRE":
+		case "NOVIEMBRE":numDias=30;
+			respuesta="El mes "+ mes +" del anyo "+ anyo +" tiene "+ numDias +" días.";
+		break;
+		case "FEBRERO":
+				if (((anyo % 4 == 0)&& !(anyo %100==0))||(anyo%400==0))
+						numDias=29;
+				else
+						numDias=28;
+				break;
+		}
+		if(numDias==0)
+				respuesta="Ese mes no existe";
+		else
+				respuesta="El mes "+ mes +" del anyo "+ anyo +" tiene "+ numDias +" días.";
+document.write(respuesta);
+</script>
+</body>
+</html>

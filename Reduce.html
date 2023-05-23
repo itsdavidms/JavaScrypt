@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			FUNCION Reduce()
+		</title>
+	</head>
+	<body>
+		<p> La resta de todos los numeros empezando por la izquierda es: </p>
+		<p id="demo"></p>
+		<script>
+			const numeros=[175,50,25];
+			document.getElementById("demo").innerHTML=numeros.reduce(miFuncion);
+			function miFuncion(total,num){
+				return total-num;
+			}
+		</script>
+	</body>
+</html>

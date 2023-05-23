@@ -1,0 +1,23 @@
+<!doctype html>
+	<html>
+		<head>
+			<title>	
+				VECTOR ASCENDENTE 
+			</title>
+			<meta charset="UTF-8">
+		</head>
+			<body>
+				<script>
+					let i=0 , v=[1,2,3,6,8,9,10], actual=v[0];
+					while(i<v.length&&v[i]>=actual)
+					{
+						actual=v[i];
+						i++;
+					}
+					if(i<v.length)
+						alert("El vector no esta ordenado de forma ascendente");
+					else 
+						alert("El vector esta ordenado de forma ascendente");
+				</script>
+			</body>
+	</html>

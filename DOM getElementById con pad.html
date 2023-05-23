@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<script>
+		function pad(s)
+		{
+			return (s<10)?'0'+s:s;
+		}
+		function muestraFecha()
+		{
+		let d=new Date();
+		let mes=String(d.getMonth()+1);
+		let dia=String(d.getDate());
+		let anyo=String(d.getFullYear());
+		document.getElementById("demo").textContent=`--> ${pad(dia)}/${pad(mes)}/${anyo}`;
+		}
+	</script>
+</head>
+<body>
+	<h1> Ejemplo Javascript de getElementById </h1>
+	<p id="demo"> Esto es un parrafo </p>
+	<button type="button" onlick="muestraFecha()"> Mostrar Fecha </button>
+</body>
+</html>

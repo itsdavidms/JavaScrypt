@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Promesa con async-await</title>
+</head>
+<body>
+<script>
+  function entretener(ms) {
+    return new Promise(resolve=> setTimeout(resolve,ms));
+  }
+  async function miFuncion() {
+    console.log('Inicio de la funcion');
+    const promesa=entretener(2000);
+    await promesa.then(()=>{
+      console.log('La espera finalizo correctamente');
+    })
+    .catch(error=> {
+      console.error('Ocurrioun error durante la espera:',error);
+    });
+    console.log('Fin de la funcion')
+  }
+  console.log('Antes de llamar a miFuncion');
+  miFuncion().catch(error=> {
+    console.error('Error al llamar a miFuncion:',error);
+  });
+  console.log('Despues de llamar a miFuncion');
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Ejercicio crear clases (con divs) 
+    </title>
+</head>
+  <body>
+    <script>
+      class miDiv{
+        //Parametros por defecto
+        constructor(ancho=100,alto=100,color="yellow",contenido="Lorem ipsum dolor sit amet") {
+          this.elemento=document.createElement("div");
+          this.elemento.style.width=`${ancho}px`;
+          this.elemento.style.display="inline-block";
+          this.elemento.style.height=`${alto}px`;
+          this.elemento.style.backgroundColor=color;
+          this.elemento.textContent=contenido;
+        }
+        mostrar(){
+          return this.elemento;
+        }
+      }
+      let div1=new miDiv(50,50,"yellow","hola a todos");
+      document.body.appendChild(div1.mostrar());
+      let div2=new miDiv(50,50,"blue","ola k ase?");
+      document.body.appendChild(div2.mostrar());
+      let div3=new miDiv(100,100,"red","Hola Don Pepito");
+      document.body.appendChild(div3.mostrar());
+      let div4=new miDiv();
+      document.body.appendChild(div4.mostrar());
+      console.log(document.body.innerHTML);
+      console.log(div1.style);
+    </script>
+ </body>
+</html>

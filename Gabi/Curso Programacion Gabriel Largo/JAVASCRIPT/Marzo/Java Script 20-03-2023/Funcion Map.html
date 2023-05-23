@@ -1,0 +1,25 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 20/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+							const personas=
+							[
+							{nombre:"Malcom", apellido:"Reynolds"},
+							{nombre:"Kaylee", apellido:"Frye"},
+							{nombre:"Jayne", apellido:"Cobb"}
+							];
+							document.write(personas.map(concatenaNombreyApellido));
+							function concatenaNombreyApellido(item) 
+							{
+								return `<${item.nombre} ${item.apellido}<br>`;
+							}
+						</script>
+				</body>
+	</html>

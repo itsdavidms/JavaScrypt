@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Acceder al estilo con JS mediante los nodos (con variable) 
+	</title>
+</head>
+<body>
+	<p id="p1"> Hello World!</p>
+	<p id="p2"> Hello World!</p>
+	<input type="button" id="boton" value="Prueba" onclick="miFuncion()"/>
+	<script>
+		function miFuncion() {
+			let p=document.getElementById("p2");
+			let estilo=p.style;
+			estilo.color="blue";
+			estilo.fonFamily="Arial";
+			estilo.fonSize="larger";
+			p.textContent="El estilo del parrafo ha sido cambiado en el script"
+		}
+	</script>
+</body>
+</html>

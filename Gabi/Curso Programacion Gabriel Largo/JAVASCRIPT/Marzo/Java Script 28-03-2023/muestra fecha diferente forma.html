@@ -1,0 +1,34 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 0/03/2023 
+				</title>
+						<meta charset="UTF-8">
+						<script>
+							function pad(s)
+							{
+								return(s<10) ? '0' + s :s;
+							}
+							function muestraFecha() 
+							{
+							let d= new Date();
+							let mes= String(d.getMonth() + 1);
+							let dia = String(d.getDate());
+							let anyo = String(d.getFullYear());
+							document.getElementById("demo").textContent= `- - > ${pad(dia)}/${pad(mes)}/${anyo}`
+							}
+						</script>
+		</head>
+				<body>
+					<h1> Ejemplo get Element</h1>
+					<p id="demo"> Esto Es un parrafo </p>
+					<button type="button" onclick="muestraFecha()">Mostrar Fecha</button>
+				</body>
+	</html>
+							function pad(s) 
+							{
+								return (s<10) ? '0' +s :s;
+							}
+							let d =new Date();
+							alert([pad(d.getDate()),pad(d.getMonth()+1), d.getFullYear()].join('/'));

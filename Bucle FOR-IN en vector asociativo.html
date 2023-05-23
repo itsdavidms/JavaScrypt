@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		VECTOR ASOCIATIVO
+	</title>
+</head>
+<body>
+	<script>
+		let lista=new Array();
+		let indice="dos";
+		lista["uno"]=1;
+		lista["dos"]=2;
+		lista["tres"]=3;
+		lista["cuatro"]=4;
+		document.write(lista["tres"]); //Devuelve 3
+		document.write("-"+lista.tres); //Muestra 3
+		for(let i in lista)
+			document.write(`<br/>En la posicion ${i} esta el elemento ${lista[i]}`);
+	</script>
+</body>
+</html>

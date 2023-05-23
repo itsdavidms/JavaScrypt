@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<body>
+	<p id="demo"></p>
+		<script>
+			let x=10;
+			//Aquí x es 10
+			{
+				const x=2;
+				alert(x);
+				//Aquí x es 2
+			}
+			//Aquí x es 10
+			document.getElementById("demo").innerHTML=x;
+		</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 29/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+					<a id="vinculo" href="https://www.google.com/"> Google </a>
+					<p> El evento preventDefault() evitara que se lleve a cabo la accion por defecto para el evento y el elemento. </p>
+					<script>
+					document.getElementById("vinculo").addEventListener("click",function(event) {
+					event.preventDefault();
+					console.log("Gestiona manejador 1");	
+					});
+					//Con funcion flecha
+					document.getElementById("vinculo").addEventListener("click",(event)=> {event.preventDefault();
+						console.log("Gestiona manejador 2 ");
+					}); 
+
+					</script>
+				</body>
+	</html>

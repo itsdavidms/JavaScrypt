@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		 Evento (teclado) con manejadores semanticos  
+	</title>
+	<script>
+		window.onload=function() {
+		document.onkeydown=miManejadorEventosTeclado;
+		}
+		function miManejadorEventosTeclado(miEvento) {
+			let keyValue=miEvento.key;
+			let codeValue=miEvento.code;
+			console.log("keyValue: " +keyValue);
+			console.log("codeValue: "+codeValue);
+		}
+	</script>
+</head>
+<body>
+	Eventos del taclado. Abre la consola.
+</body>
+</html>

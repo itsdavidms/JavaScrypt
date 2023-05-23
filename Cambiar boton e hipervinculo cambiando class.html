@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Cambiar el botón y el hipervínculo cambiando la class
+	</title>
+</head>
+<body>
+	<a id="link" href="http://www.google.com" class="google"> Enlace a </a>
+	<button id="boton" onclick="miFuncion()">Google</button>
+	<script>
+		let flag=true;
+		//Si pongo esto aquí, en lugar de dentro de la función, será más eficiente
+		//pero la información estaría menos encapsulada
+		let enlace=document.getElementById("link");
+		function miFuncion() {
+			if(enlace.className=="google")
+			{
+				enlace.href="http://infolibre.es";
+				//Si pongo esto en una variable global, seria mas eficiente
+				document.getElementById("boton").textContent="infolibre";
+				enlace.className="infolibre";
+			}
+			else
+			{
+				enlace.href="http://www.google.com";
+				document.getElementById("boton").textContent="google";
+				enlace.className="google";
+			}
+		}
+	</script>
+</body>
+</html>

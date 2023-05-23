@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo2"></p>
+<script>
+  const frutas=["Banana","Orange","Apple","Mango"];
+  frutas.splice(1,1); //Elimino un elemento a partir de la posición 1 (Posicion inicial, elemenos a quitar, tercer parametro es lo que quiero agregar)
+  //Banana, Apple, Mango
+  document.getElementById("demo").innerHTML=frutas;
+  const frutas2=["Banana","Orange","Apple","Mango"];
+  frutas2.splice(2,0,"Lemon","Kiwi");
+  document.getElementById("demo2").innerHTML=frutas2;
+  //Banana, Orange, Lemon, kiwi, Apple, Mango
+</script>
+</body>
+</html>

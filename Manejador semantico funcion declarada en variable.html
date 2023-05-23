@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		 Manejadores semanticos - funcion declarada en variable 
+	</title>
+</head>
+<body>
+	<a href="google.es" id="vinculo"> Google </a>
+	<p>el metodo preventDefault() evitara que se lleve a cabo la accion por defecto para el evento y el elemento correspondiente.</p>
+	<script>
+		let funcionManejadora=function(event){
+			console.log("evento cancelado");
+			event.preventDefault();
+		}
+		document.getElementById("vinculo").addEventListener("click", funcionManejadora);
+	</script>
+</body>
+</html>

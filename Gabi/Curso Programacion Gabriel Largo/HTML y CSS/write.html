@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<title>	DATOS </title>
+	<meta charset="UTF-8">
+</head>
+<body>
+
+<p id="demo"> 
+	Hola mundo!
+</p>
+<script>
+	
+	function miFuncion ()
+{
+		let x=document.getElementById("demo");
+		x.style.color="#ff0000";
+		x.innerHTML="He cambiado el texto y estilo";
+
+
+
+}
+	function miFuncion2 ()
+{
+		let x=document.getElementById("demo");
+		x.style.color="#000000";
+		x.innerHTML="Java scrip puede cambiar un estilo"
+}	
+</script>
+<button type="button" onclick="miFuncion()"> Pincha1! </button>
+	<button type="button" onclick="miFuncion2()"> Pincha2! </button>
+	<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+					canvas html5
+				</canvas>
+<script>
+		let c=document.getElementById("myCanvas");
+		let ctx=c.getContext("2");
+		ctx.fillStyle="ff0000"
+		ctx.fillRect(0,0,150,75);
+</script>
+</body>
+</html>

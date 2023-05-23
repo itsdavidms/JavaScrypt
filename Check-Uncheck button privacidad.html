@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Check/Uncheck boton
+    </title>
+    <script>
+      function check() {
+        let elemento=document.getElementById("condiciones");
+        alert("Elemento: "+elemento.value+"\n Seleccionado: "+elemento.checked);
+        elemento=document.getElementById("privacidad");
+        alert("Elemento: "+elemento.value+"\n Seleccionado: "+elemento.checked);
+    }
+  </script>
+</head>
+  <body>
+    <form>
+      <input type="checkbox" id="condiciones" name="condiciones" value="condiciones"/>He leido y acepto las condiciones<br/>
+      <input type="checkbox" id="privacidad" name="privacidad" value="privacidad"/>He leido y acepto la privacidad<br/>
+    </form>
+  <button type="button" onclick="check()">Comprueba</button>
+ </body>
+</html>

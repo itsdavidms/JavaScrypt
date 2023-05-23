@@ -1,0 +1,30 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 31/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+<div id="prueba">
+	<span id="id5" class="clase" title="Azul">Color</span>
+	<span id="id4" class="clase" title="Verde">Color</span>
+	<span id="id3" class="clase" title="Naranja">Color</span>
+	<span id="id2" class="clase" title="Lila">Color</span>
+	<span id="id1" class="clase" title="Rojo">Color</span>
+</div>
+<button onclick="miFuncion()">Pincha</button>
+						<script>
+								function miFuncion() 
+								{
+									document.getElementById('id1').innerHTML=document.getElementById('id1').title;//rojo
+									document.querySelector('#prueba .clase').innerHTML=document.querySelector('#prueba .clase').title; //Azul
+									document.querySelector('#prueba #id3.clase').innerHTML=document.querySelector('#prueba #id3.clase').title;//naranja
+									document.querySelector('#prueba .clase+.clase').innerHTML=document.querySelector('#prueba .clase+.clase').title;//verde
+									document.querySelector('#prueba .clase[title^=L]').innerHTML=document.querySelector('#prueba .clase[title^=L]').title;//lila
+								}
+						</script>
+				</body>
+	</html>

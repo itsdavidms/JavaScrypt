@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Crear NODOS (DOM) 
+	</title>
+		<p id="demo"> Haz click para añadir un nodo de texto</p>
+		<input type="text"id="texto"/><br/>
+		<button onclick="miFuncion()">Prueba</button><br/>
+	<script>
+		function miFuncion()
+		{
+
+			let br=document.createElement("br");
+			let texto=document.getElementById("texto").value;
+			let t=document.createTextNode(texto);
+			document.body.appendChild(t);
+			document.body.appendChild(br);
+		}
+	</script>
+</body>
+</html>

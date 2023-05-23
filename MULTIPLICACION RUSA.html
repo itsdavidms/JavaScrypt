@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		</head>
+	<body>
+		<script>
+			let num1, num2, resultado=0;
+			num1=parseInt(prompt("Introduce el primer numero de la multiplicacion"));
+			num2=parseInt(prompt("Introduce el segundo numero de la multiplicacion"));
+			while(num1>1)
+			{
+				if(num1%2!=0)
+					resultado+=num2;
+				num1=parseInt(num1/2);
+				num2=num2*2;
+			}
+			resultado+=num2;
+			alert("El resultado es :"+resultado);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+	<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+		0<input type="range" name="a" value="50"/>100
+		+<input type="number" name="b" value="50"/>
+		=<output name="x" for="a b"></output>
+	</form>
+	<p><form oninput="barra.value=parseInt(a.value)">
+		0<input type="range" name="a" value="50"/>100
+		<progress max="100" value="50" id="barra">25/100</progress>
+	</form>
+<p><h1> El atributo autocompletar</h1>
+	<p> Rellena y envia el formulario, cuando recargues la pagina se ve que se autocompleta el formulario.</p>
+	<form action="http://www.w3schools.com/action_page.php" autocomplete="on">
+		<label for="fname">Nombre:</label>
+			<input type= "text" id="fname" name="fname"/><br/><br/>
+		<label for="lname">Apellido:</label>
+			<input type="text" id="lname" name="lname"/><br/><br/>
+		<label for="email">Email:</label>
+			<input type="email" id="email" name="email" autocomplete="off"/><br/><br/>
+		<input type="submit">
+	</form>
+	<form action="http://www.w3schools.com/action_page.php">
+			Fecha de nacimiento: <input type="date" name="bday"/>
+		<input type="submit">
+	</form>
+	<p><form action="http://www.w3schools.com/action_page.php">
+		Selecciona una hora: <input type="time" name="usr_time">
+		<input type="submit">
+	</form></p>
+	<p><form action="demo_form.asp" method="GET">
+		Adivina la hora de llegada: <input type="time" name="horallegada" min="12:00" max:="18:00" step="600">
+		<input type="submit" value="Enviar datos">
+	</form></p>
+<form action="http://www.w3schools.com/action_page.php">
+	Selecciona un color: <input type="color"
+	name="color favorito"/><br/>
+	<input type="submit"/>
+</form>
+</body>
+</html>

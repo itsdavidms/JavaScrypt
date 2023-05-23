@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		 Manejadores semanticos con dos eventos - (funcion en variable y funcion flecha)
+	</title>
+</head>
+<body>
+	<a href="google.es" id="vinculo"> Google </a>
+	<p>el metodo preventDefault() evitara que se lleve a cabo la accion por defecto para el evento y el elemento correspondiente.</p>
+	<script>
+		document.getElementById("vinculo").addEventListener("click",function(event){
+			event.preventDefault();
+			console.log("Gestionando Evento Manejador 1");
+		});
+		
+		document.getElementById("vinculo").addEventListener("click",(event)=>{event.preventDefault();
+			console.log("Gestionando Evento Manejador 2");
+		});		
+	
+	</script>
+</body>
+</html>

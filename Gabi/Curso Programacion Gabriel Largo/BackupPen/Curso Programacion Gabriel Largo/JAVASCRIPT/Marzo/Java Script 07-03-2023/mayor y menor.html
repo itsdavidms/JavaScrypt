@@ -1,0 +1,35 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 07/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+								let i=0 , v=[1,2,3,4,5,6,7,9,10,], mayor,menor;
+								//let posicion=false;
+								mayor=v[0];
+								menor=v[0];
+								console.log()
+								while(i<v.length)
+								{
+									if(v[i]>mayor)
+									{
+										mayor=v[i];
+									}
+									else{
+										if (v[i]<menor)
+										{
+											menor=v[i];
+										}
+										}	
+											i++;
+								}
+								document.write("El elemento mayor es el " +mayor+ "<br/>");
+								document.write("El elemento menor es el  "+menor);
+						</script>
+				</body>
+	</html>

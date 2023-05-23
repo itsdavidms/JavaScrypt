@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<title>	
+			JAVA SCRIPT 05/04/2023 
+</title>
+<meta charset="UTF-8">
+<head>
+</head>
+<body>
+	<script>
+let i=0;
+function botonea()
+ {
+	let btn=document.createElement('button');
+	let t=document.createTextNode('Clickº'+i);
+	btn.appendChild(t);
+	btn.onclick=function()
+	{
+		console.log("hola");
+	}
+	document.body.appendChild(btn);
+	i++;
+}
+</script>
+<button type="button" onclick="botonea()">Pincha</button>
+</body>
+</html>

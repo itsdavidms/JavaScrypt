@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+	Tu navegador no soporta la etiqueta canvas </canvas>
+	<script>
+		var c=document.getElementById("myCanvas");
+		var ctx=c.getContext("2d");
+		ctx.font="30px Arial";
+		ctx.strokeStyle="rgb(255,0,0)";
+		//ctx.shadowColor='blue';//Color de la sombra
+		//ctx.shadowBlur=10;//Difuminado de la sombra	
+		ctx.strokeText("Hello World",10,50);
+	</script>
+</body>
+</html>

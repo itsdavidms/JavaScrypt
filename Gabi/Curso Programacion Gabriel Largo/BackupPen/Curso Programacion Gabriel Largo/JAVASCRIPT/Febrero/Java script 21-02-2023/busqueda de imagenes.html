@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<title>	
+			JAVA SCRIPT 21/02/2023 
+</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+	let i=0;
+	let imagenes=[];
+	while(i<3)
+	{
+		imagenes[i]=prompt("Introduce el nombre de la imagen");
+		i=i+1;
+	}
+	i=0
+	while(i<imagenes.length)
+	{
+		document.write("<img src='"+imagenes[i]+"'width='150'/>");
+		i=i+1;
+	}
+</script>	
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		replace
+	</title>
+</head>
+<body>
+	<p> Pincha en el boton para reemplazar "Microsoft" con "Viva Java!" en el parrafo siguiente: Solo cambia la primer aparicion</p>
+	<p id="demo"> Elige una palabra que quieras sustituir, y elige la palara por la que quieras sustiturla </p>
+	<button onclick="miFuncion()"> Pincha aquí</button>
+	<script>
+		function miFuncion()
+		{
+			let str=document.getElementById("demo").innerHTML; //textContent;
+			let palabra=prompt("Que palabra del texto quieres sustituir?")
+			str=prompt("Introduce la palabra por la cual quieres sustituir")
+			let n=str.replace(`${palabra}`,`${str}`);
+			document.getElementById("demo").innerHTML=n; //textContent;
+		}
+	</script>
+</body>
+</html>

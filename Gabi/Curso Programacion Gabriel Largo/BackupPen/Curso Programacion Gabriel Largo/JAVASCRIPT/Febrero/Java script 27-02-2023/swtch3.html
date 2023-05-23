@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<title>	
+			JAVA SCRIPT x/x0/2023 
+</title>
+<meta charset="UTF-8">
+<head>
+</head>
+<body>
+	<script>
+		let nota;
+		nota=parseInt(prompt("Introduce tu nota",""));
+		if ((nota<=10)&&(nota>=0))
+		{
+			switch(nota){
+			case 9: alert("Sobre");
+					break;
+			case 10:alert("M.H.")
+					break;
+			case 8: alert("Notable alto")
+					break;
+			case 7: alert("Notable")
+					break;
+			case 6: alert("Bien")
+					break;
+			case 5: alert("Por los pelos")
+					break;
+			case 4: alert("Suspendido")
+					break;
+			default: alert("Tu nota es...");
+					break;
+			}
+		}else
+			alert("nota incorrecta");
+	</script>
+</body>
+</html>

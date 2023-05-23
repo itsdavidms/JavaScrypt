@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Mi Coleccion de Pokemons:</h2>
+    <form>
+        <select id="desplegable" size="8"></select>
+    </form>
+    <img id="imagen" />
+    <div id="myDiv"></div>
+
+    <script>
+        let miDesplegable;
+
+        window.onload = function cargaDesplegable() {
+          miDesplegable = document.getElementById("desplegable");
+          miDesplegable.onchange = loadMiObjetoJson;
+
+          const xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              const miObjetoJson = JSON.parse(xhr.responseText);
+              console.log(xhr.responseText);
+
+              let txt = "";
+              const pokemons = miObjetoJson.results;
+              for (let j = 0; j < pokemons.length; j++) {
+                let nombrePokemon = pokemons[j].name;
+                let option = document.createElement("option");
+                option.text = nombrePokemon;
+                option.value = pokemons[j].url;
+                miDesplegable.add(option);
+              }
+            }
+          };
+
+          xhr.open("GET", "https://pokeapi.co/api/v2/pokemon?limit=200", true);
+          xhr.send();
+        }
+
+        function loadMiObjetoJson() {
+          let xmlhttp;
+          let txt, habilidad, i, aux;
+          xmlhttp = new XMLHttpRequest();
+          let indice = miDesplegable.selectedIndex;
+          document.getElementById("myDiv").textContent = "";
+
+          if (indice == -1) {
+            alert("Selecciona un pokemon de la lista");
+          } else {
+            let urlPokemonSeleccionado = miDesplegable.options[indice].value;
+            xmlhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                const miObjetoJson2 = JSON.parse(xmlhttp.responseText);
+                console.log("--> " + xmlhttp.responseText);
+                txt = "";
+                let habilidades = miObjetoJson2.abilities;
+                for (let j = 0; j < habilidades.length; j++) {
+                  habilidad = habilidades[j].ability.name;
+                  txt += "habilidad: " + habilidad + "<br/>";
+                }
+                document.getElementById("myDiv").innerHTML = txt;
+                document.getElementById("imagen").src = miObjetoJson2.sprites.front_default;
+              }
+            };
+
+            xmlhttp.open("GET", urlPokemonSeleccionado, true);
+            xmlhttp.send();
+          }
+        }
+    </script>
+</body>
+</html>

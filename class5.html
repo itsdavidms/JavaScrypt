@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    
+    <script>
+     class rectangulo{
+      constructor (x=0,y=0, alto=0, ancho=0){
+        this._x=x;
+        this._y=y;
+        this._alto= alto;
+        this._ancho=ancho;
+      }
+      calcularArea(){
+        alert("estoy calculando el area")
+        return this._alto * this._ancho;
+      }
+      mostrar(){
+        alert("X: "+this._x+"\nY: "+this._y+"\nancho: "+ this._ancho+"\nalto: "+this._alto);
+      }
+      desplazar(dx,dy){
+        this._x+=dx;
+        this._y+=dy;
+      }
+     }
+
+     let r1 = new rectangulo(0,0,2,4);
+     r1.mostrar();
+     r1._alto=10;
+     r1._ancho=20;
+     alert("el area del rectangulo es :" + r1.calcularArea())
+     r1.mostrar();
+     r1.desplazar(5,6);
+     r1.mostrar();
+     let r2 = new rectangulo();
+     r2.mostrar();
+
+     function miFuncion(){
+      let canvas = document.getElementById("micanvas");
+      let ctx = canvas.getContext("2d");
+      ctx.beginPath();
+      ctx.strokeStyle = document.getElementById("color").value;
+      r1._x= document.getElementById("x").value;
+      r1._y= document.getElementById("y").value;
+      r1._ancho= document.getElementById("ancho").value;
+      r1._alto= document.getElementById("alto").value;
+      ctx.rect(r1._x, r1._y, r1._ancho, r1._alto);
+      ctx.stroke();
+     }
+
+    </script>
+    <canvas id="micanvas" width="200" height="100" style="border:1px solid #c3c3c3;">Tu navegador no soporta canvas</canvas>
+    <br/>
+    <label for="x">X: </label>
+    <input type="text" id="x" name="x"><br/>
+    <label for="y">Y: </label>
+    <input type="text" id="y" name="y"><br/>
+    <label for="ancho">Ancho: </label>
+    <input type="text" id="ancho" name="ancho"><br/>
+    <label for="alto">Alto: </label>
+    <input type="text" id="alto" name="alto"><br/>
+    <label for="color">Color: </label>
+    <input type="color" id="color" name="color"><br/>
+    <button onclick="miFuncion()">-Pincha-</button>
+  </body>
+</html>

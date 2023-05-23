@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Crear NODOS (DOM), replace primer hijo del li con otro nodo de texto
+	</title>
+		<ul id="miLista"><li>Agua</li><li>Te</li><li>Cafe</li></ul>
+		<p id="demo"> Haz click para reemplazar el primer elemento de la lista</p>
+		<button onclick="miFuncion()">Prueba</button>
+	<script>
+		function miFuncion()
+		{
+			let textNode=document.createTextNode("Gaseosita");
+			let item=document.getElementById("miLista").childNodes[0];
+			item.replaceChild(textNode,item.childNodes[0]);
+		}
+	</script>
+	<p> Primero creamos un nuevo nodo de texto <br/> Luego reemplazamos el nodo primer hijo del primer elemento de la lista.</p>
+	<p><strong>Nota:</strong>Este ejemplo reemplaza solo el nodo texto "Agua" con el nodo texto "Gaseosita", no el elemento LI entero, que podria haber sido otra alternativa.</p>
+</body>
+</html>

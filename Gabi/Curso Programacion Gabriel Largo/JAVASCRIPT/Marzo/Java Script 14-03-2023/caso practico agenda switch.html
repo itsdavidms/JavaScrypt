@@ -1,0 +1,35 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 14/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+								let agenda= new Array();
+								let nombrePersona;
+								agenda["Paco"]="444";
+								agenda["Luis"]="555";
+								agenda["Ana"]="222";
+								let seleccion;
+								do
+								{
+								seleccion=prompt("1.- Agenda Telefonica \n 2.-Salir \n");
+								switch(seleccion){
+								case"1":agenda=prompt("Introduce palabra en castellano");
+									if(agenda[nombrePersona]!=undefined)
+										alert(agenda+" se dice "+ agenda[agenda])
+									else
+										alert("Lo siento, no tengo esa palabra en mi base de datos");
+									break;
+								case "2":alert("Hasta luego");
+								}
+								}while(seleccion!='2');
+
+						</script>
+						Has elegido salir
+				</body>
+	</html>

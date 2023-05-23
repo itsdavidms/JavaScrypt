@@ -1,0 +1,26 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 30/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+					<script>
+						let numero,aux,i=0,v=[2,5,8,22,44,58,65,97];
+						document.write(v);
+						numero=parseInt(prompt("Introduce numero a insertar"));
+						i=v.length-1;
+						while((i>=0)&&(v[i]>numero))
+						{
+							v[i+1]=v[i];
+							i--;
+						}
+						v[i+1]=numero;
+						document.write("<br/>/////////////////////////////////////////<br/>");
+						document.write(v);
+					</script>
+				</body>
+	</html>

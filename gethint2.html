@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gethint</title>
+<script>
+	function showHint(str)
+	{
+		let xmlhttp;
+		if(str.length==0)
+		{
+			document.getElementById('txtHint').innerHTML="";
+			return;
+		}
+		xmlhttp=new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function() {
+			if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+				document.getElementById('txtHint').textContent=xmlhttp.responseText;
+			}
+		};
+		xmlhttp.open("POST","gethint2.php?q="+str,true);
+		xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		xmlhttp.send("q="+str);
+	}
+</script>
+</head>
+<body>
+	<h3> Comienza a escribir un nombre en el input de abajo </h3>
+	<p> Importante, hay en navegadores en los que cuando hay un unico elemento en unformulario y se aprieta al enter, hacen que el formulario se envie, incluso aunque no haya action (se enviara la propia pagina), para evitar esto, podemos sacar el campo de texto del formulario </p>
+	<form action="">
+		Nombre: <input type="text" id="txt1"  onkeyup="showHint(this.value)"/>
+	</form>
+	<p> Sugerencias: <span id="txtHint"></span></p>
+</body>
+</html> 

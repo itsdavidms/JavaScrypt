@@ -1,0 +1,35 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 14/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+								let lista= new Array();
+								let palabraAtraducir;
+								lista["uno"]="one";
+								lista["dos"]="two";
+								lista["tres"]="three";
+								let seleccion;
+								do
+								{
+								seleccion=prompt("1.- Traducir \n 2.-Salir \n");
+								switch(seleccion){
+								case"1":palabraAtraducir=prompt("Introduce palabra en castellano");
+									if(lista[palabraAtraducir]!=undefined)
+										alert(palabraAtraducir+" se dice "+ lista[palabraAtraducir])
+									else
+										alert("Lo siento, no tengo esa palabra en mi base de datos");
+									break;
+								case "2":alert("Hasta luego");
+								}
+								}while(seleccion!='2');
+
+						</script>
+						Has elegido salir
+				</body>
+	</html>

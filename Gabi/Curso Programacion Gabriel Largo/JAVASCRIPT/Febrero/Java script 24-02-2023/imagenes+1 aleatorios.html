@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<title>	
+			JAVA SCRIPT 24/02/2023 
+</title>
+<meta charset="UTF-8">
+<head>
+</head>
+<body>
+	<script >
+		let imagenes=new Array();
+		let pokemons=new Array();
+		pokemons[0]="bulbasur";
+		pokemons[1]="ivysaur";
+		pokemons[2]="venusaur";
+		pokemons[3]="charmander";
+		pokemons[4]="charmeleon";
+		let i=0;
+		while(i<pokemons.length)
+		{
+			imagenes[i]="<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+(i+1)+".png' width='250'>";
+			console.log(imagenes[i]);
+			i++;
+		}
+		numeroAleatorio=Math.floor(Math.random()*pokemons.length);
+		let pokemonElegido=pokemons[numeroAleatorio];
+		document.write(pokemonElegido);
+		document.write("<br/>"+imagenes[numeroAleatorio])
+		let fuerza=Math.floor(Math.random()*20)+1;
+		document.write("<br><meter id='fuerza'value='"+(fuerza)+"'min='0' max='20'></meter><br>");
+		document.write("<br/>Fuerza="+fuerza);
+
+		//https://pokeapi.co/api/v2/pokemon?limit=1000008offset=0
+		//https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon
+	</script>
+</body>
+</html>
+

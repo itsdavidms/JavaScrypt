@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Creando NODOS (DOM)
+	</title>
+</head>
+<body>
+	<ul id="myList">
+		<li>Coffee</li>
+		<li>Tea</li>
+	</ul>
+	<p> Haz click en el boton para añadir un elemento a la lista </p>
+	<button onclick="miFuncion()">Pincha</button>
+	<p><strong>Explicacion: </strong><br/> Primero creamos el nodo LI node,<br/> creamos el nodo de texto <br/> y añadimos el nod de texto al LI.<br/> Finalmente insertamos el nodo LI antes del primer nodo hijo de la lista</p>
+	<script>
+		function miFuncion()
+		{
+
+			let miNuevoLi=document.createElement("li");
+			let miNodoTexto=document.createTextNode("Water");
+			miNuevoLi.appendChild(miNodoTexto);
+			let list=document.getElementById("myList");
+			list.insertBefore(miNuevoLi, list.childNodes[0]);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Creando NODOS (DOM)
+	</title>
+</head>
+<body>
+	<script>
+		function escribeAlgo()
+		{
+			//Crendo nodo de tipo Elemento
+			let parrafo=document.createElement("p");
+
+			//Creando nodo de tipo Text
+			let contenido=document.createTextNode("Hola Mundo!");
+
+			//Añadir el nodo Text como hijo del nodo Element
+			parrafo.appendChild(contenido);
+
+			//Añadir el nodo Element como hijo de la página
+			document.body.appendChild(parrafo);
+		}
+	</script>
+	<button type="button" onclick="escribeAlgo()">Pincha</button>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<body>
+	<img id="miImagen" src="http://www.w3schools.com/js/pic_bulboff.gif" width="100" height="180">
+	<p>Enciende/Apaga la luz</p>
+	<button class="ejemplo" onclick="miFuncion()">Pincha</button>
+	<script>
+		let encendida=false;
+		function miFuncion() {
+			let image= document.getElementById('miImagen');
+			if (encendida){
+				image.src="http://www.w3schools.com/js/pic_bulboff.gif";
+			} else {
+				image.src="http://www.w3schools.com/js/pic_bulbon.gif"
+			}
+			encendida=!encendida;
+		}		
+	</script>
+</body>
+</html>

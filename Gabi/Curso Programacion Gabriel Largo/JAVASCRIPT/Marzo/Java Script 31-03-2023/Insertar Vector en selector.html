@@ -1,0 +1,67 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 31/03/2023 
+				</title>
+						<meta charset="UTF-8">
+<style>
+	.ejemplo{
+		border: 1px solid black;
+		margin: 5px;
+	}
+</style>
+		</head>
+				<body>
+					<select id="productos"></select>
+					<p id="demo"> <p>
+						<script>
+							let productos={
+								"camisetas":{
+									"descripcion":"camiseta molona",
+									"precio":"2",
+									"califiicacion":"5",
+									"vendidas":"200",
+									"imagen":"camiseta.jpg"
+								},
+								"pantalon":{
+									"descripcion":"pantalon molon",
+									"precio":"4",
+									"califiicacion":"3",
+									"vendidas":"240",
+									"imagen":"pantalon.jpg"
+								},
+								"falda":{
+									"descripcion":"falda molona",
+									"precio":"3",
+									"califiicacion":"4",
+									"vendidas":"223425",
+									"imagen":"falda.jpg"
+								},
+							};
+							let desplegable=document.getElementById("productos");
+							let info=document.getElementById('demo')
+							let htmlDesplegable="<option disable selected='selected' hidden='hidden' value=''>--Selecciona una opcion";
+							for(let producto in productos)
+							{
+								console.log(producto);
+								htmlDesplegable+=`<option value="${producto}">${producto}</option>`
+							}
+							desplegable.innerHTML=htmlDesplegable;
+							desplegable.onchange=function()
+							{
+								let valorSeleccionado=desplegable.value;
+								demo.innerHTML=productos[valorSeleccionado].descripcion;
+								info.innerHTML+="<br/><img src='"+ productos[valorSeleccionado].imagen +"'width='150'/>";
+								let estrellita="<br/>";
+
+								for(let i=0;i<productos[valorSeleccionado].califiicacion;i++)
+									estrellita+="<img src='estrellita.gif' width='15'/>";
+								estrellita+="<br/>";
+								info.innerHTML+=estrellita;
+								info.innerHTML+="vendidas: "+productos[valorSeleccionado].vendidas;
+								console.log(`${desplegable.value}`);
+							}
+						</script>
+				</body>
+	</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Ejercicio coche
+    </title>
+    <style>
+      #coche{
+        position:fixed;
+        left:0px;
+        top:50px;
+      }
+    </style>
+</head>
+  <body>
+    <script>
+      let miCoche=new Object(); //let miCoche={};
+      miCoche.x=0;
+      miCoche.y=50;
+      miCoche.modelo="BMW Isetta";
+      miCoche.color="Amarilo chillon discreto";
+      miCoche.encendido=false;
+      miCoche.arrancar=function() {
+        if(!this.encendido)
+        {
+          console.log("Intento arrancar mi coche");
+          this.encendido=true;
+          document.getElementById("coche").src="ralenti.gif";
+        }
+        else
+          console.log("Vas a quemar el motor de arranque, el coche ya está encendido");
+      }
+      miCoche.detener=function(){
+        console.log("Intento detener mi coche");
+        if(this.encendido)
+        {
+          this.encendido=false;
+          document.getElementById("coche").src="parado.gif";
+        }
+      }
+      miCoche.desplazar=function(){
+        if(this.encendido)
+        {
+          console.log("Intento desplazar mi coche");
+          this.x+=10;
+          this.y+=10;
+          let estilo=document.getElementById("coche").style;
+          estilo.left=this.x+"px";
+          estilo.top=this.y+"px";
+        }
+        else
+          console.log("el coche no esta arrancado, no se puede desplazar");
+      }
+      miCoche.mostrarCoordenadas=function(){
+        console.log("Mi coche esta en \nX:"+this.x+"\nY:"+this.y);
+      }
+    </script>
+    <button type="button" onclick="miCoche.arrancar()">Arranca</button>
+    <button type="button" onclick="miCoche.detener()">Para</button>
+    <button type="button" onclick="miCoche.desplazar()">Desplazar</button>
+    <button type="button" onclick="miCoche.mostrarCoordenadas()">mostrarCoordenadas</button>
+    <br/>
+    <img id="coche" src="parado.gif">
+ </body>
+</html>

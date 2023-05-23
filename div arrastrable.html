@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Div arrastrable</title>
+<style>
+#canvas {
+  background-color: #333;
+}
+</style>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400"></canvas>
+
+<script>
+class Cuadrado {
+  constructor(id, x, y, ancho, alto, color) {
+    this.id = id;
+    this.origen = { x: x, y: y };
+    this.ancho = ancho;
+    this.alto = alto;
+    this.color = color;
+    this.arrastreActivo = false; // indica si el cuadrado está siendo arrastrado
+  }
+
+  dibujar() {
+    ctx.fillStyle = this.color;
+    ctx.fillRect(this.origen.x, this.origen.y, this.ancho, this.alto);
+  }
+
+  estaDentro(x, y) {
+    return (
+      x >= this.origen.x &&
+      x <= this.origen.x + this.ancho &&
+      y >= this.origen.y &&
+      y <= this.origen.y + this.alto
+    );
+  }
+
+  // Inicia el arrastre del cuadrado
+  iniciarArrastre(x, y) {
+    this.arrastreActivo = true;
+    this.offsetX = this.origen.x - x;
+    this.offsetY = this.origen.y - y;
+  }
+
+  // Finaliza el arrastre del cuadrado
+  finalizarArrastre() {
+    this.arrastreActivo = false;
+  }
+
+  // Actualiza la posición del cuadrado mientras se arrastra
+  actualizarPosicion(x, y) {
+    if (this.arrastreActivo) {
+      this.origen.x = x + this.offsetX;
+      this.origen.y = y + this.offsetY;
+    }
+  }
+}
+
+const cuadrados = [
+  new Cuadrado(1, 50, 50, 50, 50, "red"),
+  new Cuadrado(2, 150, 50, 50, 50, "green"),
+  new Cuadrado(3, 250, 50, 50, 50, "blue"),
+  new Cuadrado(4, 350, 50, 50, 50, "yellow")
+];
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+function dibujarCuadrados() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Borra el canvas antes de dibujar los cuadrados
+  for (let i = 0; i < cuadrados.length; i++) {
+    cuadrados[i].dibujar();
+    if (cuadrados[i].arrastreActivo) {
+      ctx.strokeStyle = "white";
+      ctx.lineWidth = 3;
+      ctx.strokeRect(
+        cuadrados[i].origen.x,
+        cuadrados[i].origen.y,
+        cuadrados[i].ancho,
+        cuadrados[i].alto
+      );
+    }
+  }
+}
+
+dibujarCuadrados();
+
+let cuadradoArrastrado = null; // El cuadrado que está siendo arrastrado actualmente
+
+// Inicia el arrastre del cuadrado si se ha hecho clic dentro de él
+canvas.addEventListener("mousedown", function (event) {
+  const x = event.offsetX;
+  const y = event.offsetY;
+  for (let i = 0; i < cuadrados
+  
+.length; i++) {
+if (cuadrados[i].estaDentro(x, y)) {
+cuadradoArrastrado = cuadrados[i];
+cuadradoArrastrado.iniciarArrastre(x, y);
+console.log(cuadrados[i]);
+break;
+}
+}
+});
+
+// Finaliza el arrastre del cuadrado cuando se suelta el clic
+canvas.addEventListener("mouseup", function () {
+if (cuadradoArrastrado) {
+cuadradoArrastrado.finalizarArrastre();
+cuadradoArrastrado = null;
+}
+});
+
+// Actualiza la posición del cuadrado mientras se mueve el cursor
+canvas.addEventListener("mousemove", function (event) {
+const x = event.offsetX;
+const y = event.offsetY;
+if (cuadradoArrastrado) {
+cuadradoArrastrado.actualizarPosicion(x, y);
+dibujarCuadrados();
+}
+});
+</script>
+</body>
+</html>

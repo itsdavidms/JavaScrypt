@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			FUNCIÓN RECURSIVA
+		</title>
+	</head>
+	<body>
+		<script>
+			function meComoUnDonut(cantidad){
+				alert("me como un donut "+cantidad);
+			}
+			function comerDonut(cantidad){
+				if(cantidad===0){
+					alert("Ya acabe de comer donuts");
+				}
+				else{
+					meComoUnDonut(cantidad);
+					comerDonut(cantidad-1);
+					alert("acaba la llamada de "+cantidad+" donuts");
+				}
+			}
+			comerDonut(prompt("Cuantos donuts quieres que me coma?"));
+		</script>
+	</body>
+</html>

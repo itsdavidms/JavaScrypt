@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+   
+    <script>
+      class rectangulo{
+        constructor (x=0,y=0,alto=0,ancho=0){
+          this._x=x;
+          this._y=y;
+          this._alto=alto;
+          this._ancho=ancho;
+        }
+
+        set x(value){
+          console.log("asigno la x")
+          this._x = value;
+        }
+        set y(value){
+          console.log("asigno la y")
+          this._y = value;
+        }
+        set alto(value){
+          console.log("asigno la alto")
+          this._alto = value;
+        }
+        set ancho(value){
+          console.log("asigno la ancho")
+          this._ancho = value;
+        }
+        get x(){
+          console.log("Obtengo la X")
+          return this._x;
+        }
+        get y(){
+          console.log("Obtengo la Y")
+          return this._y;
+        }
+        get alto(){
+          console.log("Obtengo el alto")
+          return this._alto;
+        }
+        get ancho(){
+          console.log("Obtengo el ancho")
+          return this._ancho;
+        }
+        calcularArea(){
+          alert("Estoy calculando el area");
+          return this._alto * this._ancho;
+        }
+        desplazar(dx,dy){
+          this._x+=dx;
+          this._y=dy;
+        }
+        mostrar(){
+          alert("X: "+this._x+"\nY: "+this._y+"\nancho: "+this._ancho+"\nalto: "+this._alto);
+        }
+      }
+      let r1 = new rectangulo(0,0,2,4);
+      r1.x = 20;
+      alert(r1.x);
+      alert(r1.y);
+      alert(r1.alto);
+      alert(r1.ancho);
+    </script>
+  </body>
+</html>

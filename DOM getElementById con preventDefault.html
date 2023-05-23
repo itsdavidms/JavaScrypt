@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		 preventDefault()
+	</title>
+</head>
+<body>
+	<a id="vinculo" href="https://publico.es">Publico.es</a>
+	<p> El metodo preventDefault() evitara que se lleven a cabo la accion por defecto para el evento y el elemento correspondiente</p>
+	<script>
+		let funcionManejadora=function(event)
+		{
+			console.log("Evento cancelado");
+			event.preventDefault();
+		}
+		document.getElementById("vinculo").onclick=funcionManejadora;
+	</script>
+</body>
+</html>

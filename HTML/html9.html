@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head> 
+	<style type="text/css">
+		{
+			font-size:70%;
+			font-family:verdana,helvetica,arial,sans-serif;
+		}
+	</style>
+	<script>
+		function cnvs_getCoordinates(e)
+		{
+			let x=e.clientX;
+			let y=e.clientY;
+			document.getElementById("xycoordinates").innerHTML=
+			"Coordenadas:("+x+","+y+")";
+		}
+		function cnvs_clearCoordinates()
+		{
+			document.getElementById("xycoordinates").innerHTML="";
+		}
+	</script>
+</head>
+<body style="margin:0px;">
+	<div id="coordiv" style="width:199px;height:99px;border:1px solid #c3c3c3"
+	onmousemove="cnvs_getCoordinates(event)" onmouseout="cnvs_clearCoordinates()">
+</div>
+<br/>
+<br/>
+<br/>
+<div id="xycoordinates"></div>
+<p><canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+	Tu navegador no soporta la etiqueta canvas </canvas>
+	<script>
+		let c=document.getElementById("myCanvas");
+		let ctx=c.getContext("2d");
+		ctx.moveTo(0,0);
+		ctx.lineTo(200,100);
+		ctx.lineWidth=2;
+		ctx.stroke();
+	</script>
+</body>
+</html>

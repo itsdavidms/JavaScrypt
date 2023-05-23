@@ -1,0 +1,39 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 15/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+							let agenda ={
+								"gabi":{"direccion":"pizarro","telefono":"609"},
+								"ana":{"direccion":"Alforins","telefono":"689"},
+							}
+							let seleccion,nombrepersona,direccion,telefono;
+							do{
+								seleccion=prompt("1.-Persona \n2.-Buscar persona\n3.-Salir");
+								switch(seleccion){
+								case"1": nombrepersona=prompt("Introduce Nombre");
+									agenda[nombrepersona]={};
+									direccion=prompt("Introduce direccion");
+									agenda[nombrepersona].direccion=direccion
+									telefono=prompt("Introduce el telefono");
+									agenda[nombrepersona]["telefono"]=telefono;
+									break;
+								case"2":nombrepersona=prompt("Introduce el nombre de la persona a buscar");
+									if(agenda[nombrepersona]!=undefined)
+									{
+										alert(nombrepersona+ "\ndireccion: " + agenda[nombrepersona]["direccion"]+"\ntelefono: "+agenda[nombrepersona].telefono);
+									}
+									break;
+								case"3":alert("Adios");
+								}
+							}while(seleccion!='3');
+						</script>					
+						has elegido salir
+				</body>
+	</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Añadir objeto 
+    </title>
+</head>
+  <body>
+    <script>
+      function obtieneEdad(){
+        return this.edad;
+      }
+      let persona=new Object(); //let persona={};
+      persona.nombre="Juan";
+      persona.apellido="Lopez";
+      persona.edad=50;
+      persona.colorOjos="azul";
+      persona.muestraNombre=function() {
+        alert("El nombre es "+this.nombre);
+      }
+      persona.obtieneEdad=obtieneEdad;
+      document.write(persona.nombre + " tiene " + persona.edad + " años ");
+      persona.muestraNombre();
+      alert("La edad de "+persona.nombre+" es "+persona.obtieneEdad());
+    </script>
+ </body>
+</html>

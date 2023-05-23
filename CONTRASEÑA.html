@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+			PEDIR AL USUARIO LA CONTRASEÑA
+		</title>
+			<meta charset="UTF-8">
+		</head>
+	<body>
+		<script>
+			let intentos=1;
+			let contraseña=1234;
+			contraseña=prompt("Ingrese una contraseña de 4 dígitos: ");
+
+			while((contraseña!=1234)&&(intentos<3))
+			{
+				contraseña=prompt("Vuelve a intentar");
+				intentos++;	
+			}
+			if(contraseña!=1234)
+				alert("ERROR. Has superado el numero de intentos");
+			else
+				alert("Bien. Has acertado la contraseña");
+					
+		</script>
+	</body>
+</html>

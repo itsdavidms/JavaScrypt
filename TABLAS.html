@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<style>
+  table,td,tr{
+    border:1px solid black;
+  }
+  table{
+    border-collapse:collapse;
+  }
+</style>
+<body>
+    <script>
+      let i=0
+      let numero=parseInt(prompt("Introduce un numero"));
+      let cadena="<table border='1px'>";
+      while(i<11)
+      {
+        cadena+=`<tr>
+                <td>${numero}</td>
+                <td> x </td>
+                <td> ${i}</td>
+                <td> = </td>
+                <td> ${numero*i}</td>
+                </tr>`;
+        i++
+      }
+      cadena+="</table>";
+      document.write(cadena);
+    </script>
+</body>
+</html>

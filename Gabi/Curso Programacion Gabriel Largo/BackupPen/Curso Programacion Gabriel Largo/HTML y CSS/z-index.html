@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<script>
+		function myFunction() {
+		 document.getElementById('imagen').style.zIndex= 1;
+
+		}
+		function myFunction2(){
+			document.getElementById('imagen').style.zIndex= -1;
+
+		}
+	</script>
+	<style>
+		img
+		{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			z-index: -1;
+		}
+	</style>
+</head>
+<body>
+	<h1> Esto  es la Cabecera 1 </h1>
+	<img id="imagen" src="pancho.png" width="100" height="140"/>
+	<button onclick="myFunction()"> Click ME</button>
+	<button onclick="myFunction2()"> Click ME</button>
+</body>
+</html>

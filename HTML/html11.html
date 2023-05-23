@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<body>
+<canvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;">
+	Tu navegador no soporta la etiqueta canvas </canvas>
+	<script>
+		let c=document.getElementById("myCanvas");
+		let ctx=c.getContext("2d");
+		ctx.beginPath();
+		/*arc(x,y,r,start,stop)*/
+		ctx.arc(95,50,40,0,2*Math.PI);
+		ctx.stroke();
+	</script>
+</body>
+</html>

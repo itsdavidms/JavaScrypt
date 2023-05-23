@@ -1,0 +1,22 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 28/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+					<a id="vinculo" href="https://www.youtube.com/@ansopa">Youtube </a>
+					<p> El metodo preventDefault() Evitara que se lleve a cabo la accion por defecto para el evento y el element correspondiente </p>
+						<script>
+								let funcionManejadora=function (event) 
+								{
+									console.log("Evento Cancelado");
+									event.preventDefault();
+								}							
+							document.getElementById('vinculo').onclick= funcionManejadora		
+						</script>
+				</body>
+	</html>

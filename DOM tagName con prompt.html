@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<body>
+<p> Hola gente </p>
+<div id="main">
+	<p> El DOM es muy útil</p>
+	<p> Este ejemplo muetsra el uso del metodo <b>getElementByTagName</b></p>
+</div>
+	<script>
+		let parrafos=document.getElementsByTagName("p");
+		//en le textContent no cambia el tema del acento
+		parrafos[0].innerHTML=prompt("Dime el texto a insertar");
+	</script>
+</body>
+</html>

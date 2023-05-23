@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		 preventDefault()
+	</title>
+</head>
+<body>
+	<a href="google.es" id="link"> Saluda y no vayas a google </a>
+	<p id="demo"></p>
+	<script>
+		function(e)
+		{
+			e.preventDefault();
+			let nombre=prompt("Dime tu nombre");
+			alert("hola "+nomre);
+			document.getElementById("demo").innerHTML="hola "+nombre;
+		}
+		document.getElementById("link").onclick=saluda;
+	</script>
+</body>
+</html>

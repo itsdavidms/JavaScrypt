@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		 Evento (teclado) con addEventListener
+	</title>
+	<script>
+		window.onload=function() {
+		document.addEventListener('keydown',(event)=>{ 
+			if(event.ctrlKey) {
+				if(event.keyCode==65||event.keyCode==97){
+					console.log("Has presionado Ctrl+a/A!");
+				}
+			}
+		}, false);
+	}
+	</script>
+</head>
+<body>
+	Eventos del taclado. Abre la consola.
+</body>
+</html>

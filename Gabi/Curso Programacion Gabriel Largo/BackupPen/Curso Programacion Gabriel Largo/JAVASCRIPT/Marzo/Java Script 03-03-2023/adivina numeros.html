@@ -1,0 +1,25 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 03/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+						<script>
+							let aleatorio=Math.floor(Math.random()*10)+1;
+							console.log(aleatorio)
+							let respuesta = prompt("Adivina un numero del (1 al 10)");
+							let n_intentos= 1;
+							while(respuesta!=aleatorio)
+							{
+								respuesta=prompt(n_intentos+":Error.prueba otra vez");
+								n_intentos++;
+							}	
+							alert(`Has acertado en ${+n_intentos}intentos`)
+						</script>
+							
+				</body>
+	</html>

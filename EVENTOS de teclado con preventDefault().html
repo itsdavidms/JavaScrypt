@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		 Evento de teclado, utilizando preventDefault()
+	</title>
+	<script>
+		window.onload=function() {
+		document.getElementsByTagName("input")[0].addEventListener('keydown',(event)=>{ 
+			let charCode=event.keyCode
+			if((charCode>64&&charCode<91)||(charCode>96&&charCode<123)||charCode==37||charCode==39||charCode==8||charCode==46)
+				console.log("ok");
+			else {
+				event.preventDefault();
+				console.log(charCode);
+			}
+		},false);
+	}
+	</script>
+</head>
+<body>
+	<input type="text">
+</body>
+</html>

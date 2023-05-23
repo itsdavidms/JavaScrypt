@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		 Evento (mouse) con manejadores semanticos  
+	</title>
+	<script>
+		function resalta(elEvento) {
+			//truco  para la compatibilidad cross browser
+			//window.event para IE 9 y anteriores
+			//let evento=elEvento || window.event;
+			switch(elEvento.type) {
+			case 'mouseover':
+				this.style.borderColor='black';
+				break;
+			case 'mouseout':
+				this.style.borderColor='silver';
+				break;
+			}
+		}
+		window.onload=function() {
+			document.getElementById("seccion").onmouseover=resalta;
+			document.getElementById("seccion").onmouseout=resalta;
+		}
+	</script>
+</head>
+<body>
+	<div id="seccion" style="width:150px; height:60px; border:thin solid silver">
+	Seccion de contenidos
+	</div> 
+</body>
+</html>

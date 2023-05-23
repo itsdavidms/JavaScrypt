@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		 Evento (teclado) con addEventListener
+	</title>
+	<script>
+		window.onload=function() {
+		document.addEventListener('keydown',(event)=>{ //defino la funcion flecha en el segundo parametro del addEventListener
+			let keyValue=event.key;
+			let codeValue=event.code;
+			console.log("keyValue: " +keyValue);
+			console.log("codeValue: "+codeValue); //Aca termina la funcion
+		}, false //Este false es para la funcion avanzada de eventos. Tercer parametro del addEventListener
+		);
+	}
+	</script>
+</head>
+<body>
+	Eventos del taclado. Abre la consola.
+</body>
+</html>

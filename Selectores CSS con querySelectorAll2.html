@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		SELECTORES CON CSS .querySelectorAll()
+	</title>
+	<style>
+		.ejemplo{
+			border:1px solid black;
+			margin:5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="ejemplo">
+		Un div con class="ejemplo"
+	</div>
+	<div class="ejemplo">
+		Otro div con class="ejemplo"
+	</div>
+	<p class="ejemplo"> Un p div con class="ejemplo"</p>
+	<p>Esto es un elemento <span class="ejemplo">span</span> con class="ejemplo" dentro de un p.</p>
+	<p>Haz click en el boton para cambiar el color de fondo de todos los elementos con class="ejemplo"</p>
+	<button class="ejemplo" onclick="miFuncion()">Pincha</button>
+	<script>
+		let enRojo=false;
+		function miFuncion(){
+			let x=document.querySelectorAll(".ejemplo");
+			let i;
+			if(!enRojo){
+				for(i=0;i<x.length;i++) {
+					x[i].style.backgroundColor="red";
+				}
+			}
+			else
+				for (i=0;i<x.length;i++){
+				x[i].style.backgroundColor="white";
+			}
+			enRojo=!enRojo;
+		}
+	</script>
+</body>
+</html>

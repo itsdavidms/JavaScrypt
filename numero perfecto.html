@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		</head>
+	<body>
+		<script>
+			let num,i,mitad,sumatorio=1;
+			num=prompt("Introduce el numero");
+			i=2;
+			mitad=num/2;
+			while(i<=mitad)
+			{
+				if(num%i==0)
+					sumatorio+=i;
+				i++;
+			}
+			if(sumatorio==num && num!=1)
+				alert("Nº perfecto");
+			else
+				alert("Nº no perfecto");
+		</script>
+	</body>
+</html>

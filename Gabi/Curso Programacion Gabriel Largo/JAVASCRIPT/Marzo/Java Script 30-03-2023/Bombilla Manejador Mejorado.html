@@ -1,0 +1,29 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 30/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+					<img id="miImagen" onclick="funcionEncender()" src="https://www.w3schools.com/js/pic_bulboff.gif" width="100" height="180">
+					<p>Enciende / Apaga la Luz </p>
+					<script>
+					let image = document.getElementById('miImagen');
+					function funcionApagar() 
+					{
+						console.log("apagamos");
+						image.src="https://www.w3schools.com/js/pic_bulboff.gif";
+						image.onclick=funcionEncender;
+					}
+					function funcionEncender()
+					{
+						console.log("Encendemos");
+						image.onclick=funcionApagar;
+						image.src="https://www.w3schools.com/js/pic_bulbon.gif";
+					}
+					</script>
+				</body>
+	</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+			SECUENCIA EN VECTOR INTRODUCIDO POR EL USUARIO
+		</title>
+			<meta charset="UTF-8">
+	</head>
+	<body>
+		<script>
+			let numero, valor, contador, i=0, v=[2,2,2,3,3,3,5,5,5,5,9,9,9,9,9,5];		
+			document.write(v);
+			valor=v[0];
+			contador=1;
+			i=1;
+			numero=prompt("Introduce la longitud de la secuencia a buscar:");
+			while((contador<numero)&&(i<v.length))
+			{
+				if(v[i]==valor)
+					contador++;
+				else{
+					valor=v[i];
+					contador=1;
+				}
+				i++;
+			}
+			if(contador==numero)
+				alert("La secuencia esta entre "+(i-numero)+" y "+(i-1)+" y es el numero"+v[i-1]);
+			else
+				alert("No hay secuencia");
+			document.write(`<br/>///////////////<br/>`);
+			document.write(v);
+		</script>
+	</body>
+</html>

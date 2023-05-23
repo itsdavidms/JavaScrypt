@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Cambiar clase al elemento  
+	</title>
+	<style>
+		.democlass{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<h1> Hola Mundo </h1>
+	<p>haz click en el boton para crear un atributo "class" con el valor "democlass" e insertarlo en el elemento H1 de arriba</p>
+	<button onclick="miFuncion()">Pincha</button>
+	<script>
+		function miFuncion() {
+			let h1=document.getElementsByTagName("H1")[0];
+			h1.className="democlass"; //No se hace con el atributo class, es con el atributo 'className'
+			//document.getElementsByTagName("H1")[0].className="democlass";
+		}
+	</script>
+</body>
+</html>

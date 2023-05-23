@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+let mes, anyo, numDias, respuesta;
+mes=parseInt(prompt("Introduce un número del mes",""));
+anyo=parseInt(prompt("Introduce un anyo",""));
+switch(mes)
+{
+case 1:
+case 3:
+case 5:
+case 7:
+case 8:
+case 10:
+case 12:numDias=31;
+break;
+case 4:
+case 6:
+case 9:
+case 11:numDias=30;
+break;
+case 2:
+if (((anyo % 4 == 0)&& !(anyo %100==0))||(anyo%400==0))
+numDias=29;
+else
+numDias=28;
+break;
+}
+if(mes>=1 && mes<=12)
+respuesta="El mes "+mes+" del año "+anyo+" tiene "+numDias+" días.";
+else
+respuesta="Ese mes no existe";
+document.write(respuesta);
+</script>
+</body>
+</html>

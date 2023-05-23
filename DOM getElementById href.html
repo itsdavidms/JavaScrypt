@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+	<script>
+		function saluda()
+		{
+		let nombre=prompt("Dime tu nombre");
+		alert("hola "+nombre);
+		document.getElementById("demo").innerHTML="hola "+nombre;
+		}
+		function despide()
+		{
+		let nombre=prompt("Dime tu nombre");
+		alert("adios "+nombre);
+		document.getElementById("demo").innerHTML="adios "+nombre;
+		}
+	</script>
+	<a href="#" onclick="saluda();return false;">Saluda</a>
+	<a href="#" onclick="despide();return false;">Despide</a>
+		<input type="text" onkeypress="return false"> <!--keypress no se usa, hay que cambiarlo por ONKEYDOWN-->
+	<input type="text" onkeydown="return false">
+	<a href="http://www.google.es/" onclick="return false;">Google</a>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		EJERCICIO AGENDA (ARRAY ASOCIATIVO)
+	</title>
+	<style>
+		td{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		let agenda={
+			Ana:{
+				direccion:"Mayor 23",
+				telefono:333
+			},
+			Luis:{
+				direccion:"Menor 15",
+				telefono:222
+			},
+			Paqui:{
+				direccion:"Ancha 64",
+				telefono:789
+			}
+		};
+		let seleccion, nombrePersona, direccion, telefono; 
+		do{
+			seleccion=prompt("1.- Insertar persona\n2.- Buscar persona\n3.- Salir y mostrar listado\n");
+			switch(seleccion){
+			case "1":nombrePersona=prompt("Introduce el nombre de la persona a insertar");
+				agenda[nombrePersona]={};
+				direccion=prompt("Introduce la direccion");
+				agenda[nombrePersona].direccion=direccion;
+				telefono=prompt("Introduce el telefono");
+				agenda[nombrePersona]["telefono"]=telefono;
+				break;
+			case "2":nombrePersona=prompt("Introduce el nombre de la persona a buscar");
+				if(agenda[nombrePersona]!=undefined)
+				{
+					alert(nombrePersona+ "\nDireccion: "+agenda[nombrePersona]["direccion"]+"\nTelefono: "+agenda[nombrePersona].telefono);
+				}
+				break;
+			case "3":
+				document.write("<table style='width:60%; margin:auto; border:1px solid black; border-collapse: collapse;'>");
+				for(let i in agenda)
+				{
+					document.write("<tr><td><img src='https://png.pngtree.com/png-clipart/20190917/original/pngtree-cartoon-contact-icon-download-png-image_4601024.jpg' width='50'/></td>");
+					document.write(`<td>${i}</td>`);
+					document.write("<td>"+agenda[i].direccion+"</td>");
+					document.write("<td>"+agenda[i].telefono+"</td>");
+					document.write("</tr>");
+				}
+				document.write("</table>");
+				alert("Hasta luego");
+			}
+		} while(seleccion!='3');
+	</script>
+</body>
+</html>

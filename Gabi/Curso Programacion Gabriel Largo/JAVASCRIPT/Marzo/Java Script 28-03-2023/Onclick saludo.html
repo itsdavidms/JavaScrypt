@@ -1,0 +1,24 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 28/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+					<a id="link" href="google.es">Saluda y no vayas a google</a>
+					<p> El metodo preventDefault() Evitara que se lleve a cabo la accion por defecto para el evento y el element correspondiente </p>
+						<script>
+								function saluda(e) 
+								{
+								e.preventDefault();
+								let nombre=prompt("Dime Tu nombre");
+								alert("hola " +nombre);
+								document.getElementById("demo").innerHTML="hola" + nombre;
+							}	
+							document.getElementById('link').onclick=saluda;
+						</script>
+				</body>
+	</html>

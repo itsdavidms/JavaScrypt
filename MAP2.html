@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			FUNCION MAP
+		</title>
+	</head>
+	<body>
+		<script>
+			const personas=[
+				{nombre:"Paco", apellido:"Reyes"},
+				{nombre:"Ana", apellido:"Perez"},
+				{nombre:"Lola", apellido:"Lopez"}
+				];
+			document.write(personas.map(concatenaNombreYApellido));
+			function concatenaNombreYApellido(item){
+				return `${item.nombre} ${item.apellido}`;
+			}
+		</script>
+	</body>
+</html>

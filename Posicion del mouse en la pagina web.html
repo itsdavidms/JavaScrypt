@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+     window.onload = function(){
+      document.onmousemove= muestrainfo
+     }
+     function muestrainfo(elEvento){
+      let x = elEvento.clientX;
+      let y = elEvento.clientY;
+      let xScreen= elEvento.screenX;
+      let yScreen= elEvento.screenY;
+      document.getElementById("demo").textContent= "X: "+x+"/"+window.innerWidth+" , Y: "+y+"/"+window.innerHeight;
+      document.getElementById("demo2").textContent= "XScreen: "+xScreen+"/"+screen.width+", yScreen: "+yScreen+"/"+screen.height;
+      let coordenadaX=elEvento.pageX;
+      let coordenadaY=elEvento.pageY;
+      console.log("La posicion: "+coordenadaX+ " " +coordenadaY+" respecto de la pagina web");
+     }
+    </script>
+  </head>
+  <body>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <div id="demo"></div>
+    <div id="demo2"></div>
+
+  </body>
+</html>

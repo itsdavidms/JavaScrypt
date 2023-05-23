@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<body>
+	<h1> Mi primer JavaScript</h1>
+<script>
+	document.write("Hola!");
+</script>
+<p id="demo">
+	JS puede reaccionar a eventos, como puede ser el click de un boton.
+</p>
+<script>
+function miFuncion()
+{
+	document.getElementById("demo").innerHTML="Hola JavaScript";
+}	
+</script>
+<button type="button" onclick="miFuncion()">Pincha!</button>
+<script>
+	function miFuncion()
+	{
+		let x=document.getElementById("demo"); // Encuentra el elemento 
+		x.style.color="#ff0000";
+		x.innerHTML="He cambiado el texto y el estilo";
+	}
+	function miFuncion2()
+	{
+		x=document.getElementById("demo"); // Encuentra el elemento
+		x.style.color="#000000"; //Cambia el estiolo
+		x.innerHTML="JavaScript puede cambiar el estilo de un elemento HTML";
+	}
+</script>
+</body>
+</html>

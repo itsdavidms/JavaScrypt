@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			SUMA DE LOS 100 PRIMEROS NUMEROS PRIMOS
+		</title>
+	</head>
+	<body>
+		<script>
+			let i,num, mitad, primo;
+			primo=0;
+			num=1;
+			while(primo<100)
+			{
+				i=2;
+				mitad=num/2;
+				while((i<=mitad)&&(num%i!=0))
+					i++;
+				if(i>mitad&&num!=1)
+				{
+					document.write(num+",");
+					primo++;
+				}
+				num++;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Cambiar el botón y el hipervínculo accediendo a los nodos del documento
+	</title>
+</head>
+<body>
+	<a id="link" href="http://www.google.com" class="google"> Enlace a </a>
+	<button id="boton" onclick="miFuncion()">Prueba</button>
+	<script>
+		let flag=true;
+		let textnode=document.createTextNode("infolibre");
+		let textnode2=document.createTextNode("google");
+		let enlace=document.getElementById("link");
+		let item=document.getElementById("boton");
+		function miFuncion() {
+			if(flag)
+			{
+				enlace.href="http://infolibre.es";
+				item.replaceChild(textnode,item.childNodes[0]);
+			}
+			else
+			{
+				enlace.href="http://www.google.com";
+				item.replaceChild(textnode2,item.childNodes[0]);
+			}
+			flag=!flag;
+		}
+	</script>
+</body>
+</html>

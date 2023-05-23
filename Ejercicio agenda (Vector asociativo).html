@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+		EJERCICIO AGENDA (ARRAY ASOCIATIVO)
+	</title>
+</head>
+<body>
+	<script>
+		let agenda={};
+		let seleccion, nombrePersona, direccion, telefono; 
+		do{
+			seleccion=prompt("1.- Insertar persona\n2.- Buscar persona\n3.- Salir\n");
+			switch(seleccion){
+			case "1":nombrePersona=prompt("Introduce el nombre de la persona a insertar");
+				agenda[nombrePersona]={};
+				direccion=prompt("Introduce la direccion");
+				agenda[nombrePersona].direccion=direccion;
+				telefono=prompt("Introduce el telefono");
+				agenda[nombrePersona]["telefono"]=telefono;
+				break;
+			case "2":nombrePersona=prompt("Introduce el nombre de la persona a buscar");
+				if(agenda[nombrePersona]!=undefined)
+				{
+				alert(nombrePersona+ "\nDireccion: "+agenda[nombrePersona]["direccion"]+"\nTelefono: "+agenda[nombrePersona].telefono);
+				}
+				break;
+			case "3":alert("Hasta luego");
+			}
+		} while(seleccion!='3');
+	</script>
+	Ya has elegido salir
+</body>
+</html>

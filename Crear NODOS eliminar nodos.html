@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+	<title> 
+		Creando NODOS (DOM)
+	</title>
+	<div id="div1">
+		<p id="p1">Esto es un parrafo</p>
+		<p id="p2">Esto es otro parrafo</p>
+	</div>
+	<script>
+		function elimina()
+		{
+
+			let child=document.getElementById("p1");
+			child.parentNode.removeChild(child);
+		}
+	</script>
+	<button type="button" onclick="elimina()">Elimina</button>
+</body>
+</html>

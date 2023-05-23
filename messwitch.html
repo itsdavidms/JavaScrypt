@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<body>
+<script>
+ let mes, anyo, numDias=0, respuesta;
+ mes=prompt("Introduce el nombre del mes","").toUpperCase();
+ anyo=prompt("Introduce un anyo","");
+   switch(mes){
+        case "ENERO":
+        case "MARZO":
+        case "MAYO":
+        case "JULIO":
+        case "AGOSTO":
+        case "OCTUBRE":
+        case "DICIEMBRE":numDias=31;
+               break;
+         case "ABRIL":
+         case "JUNIO":
+         case "SEPTIEMBRE":
+         case "NOVIEMBRE":numDias=30;
+               break;
+         case "FEBRERO":
+            if(((anyo%4==0)&&!(anyo%100==0))||(anyo%400==0))
+               numDias=29;
+            else
+               numDias=28;
+            break;
+ }
+if(numDias==0)
+    respuesta="Mes incorrecto";
+ else
+      respuesta="El mes "+mes+" del año "+anyo+" tiene "+numDias+" días";
+
+</script>
+<script >
+   alert(respuesta);
+</script>
+</body>
+</html>

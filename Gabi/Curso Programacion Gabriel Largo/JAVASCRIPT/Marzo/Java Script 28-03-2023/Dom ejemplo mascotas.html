@@ -1,0 +1,23 @@
+<!doctype html>
+	<html>
+		<head>
+				<title>	
+						JAVA SCRIPT 0/03/2023 
+				</title>
+						<meta charset="UTF-8">
+
+		</head>
+				<body>
+					Gatos:
+							<input name="mascotas" type="radio" value="Gatos" />
+					Perros:
+							<input name="mascotas" type="radio" value="Perros"/>
+						<script>
+								let vectorMascotas =document.getElementsByName("mascotas");
+								let i, texto="";
+								alert("Elementos con nombre mascota:" +vectorMascotas.length);
+								texto= texto+ vectorMascotas[i].value+ "\n";
+								alert("Se han encontrado los siguientes valores en elementos 'mascotas' \n" + texto);
+						</script>
+				</body>
+	</html>

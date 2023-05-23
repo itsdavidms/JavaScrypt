@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			CANTIDAD DE NUMEROS PRIMOS INTRODUCIDO POR EL USUARIO
+		</title>
+	</head>
+	<body>
+		<script>
+			let i,num, mitad, primo, totalPrimos;
+			primo=0;
+			num=1;
+			totalPrimos=prompt("Dime la cantidad de primos que quieres obtener")
+			while(primo<totalPrimos)
+			{
+				i=2;
+				mitad=num/2;
+				while((i<=mitad)&&(num%i!=0))
+					i++;
+				if(i>mitad&&num!=1)
+				{
+					document.write(num+",");
+					primo++;
+				}
+				num++;
+			}
+		</script>
+	</body>
+</html>

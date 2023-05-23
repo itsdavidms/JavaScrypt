@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Detector de personas con la cámara del portátil</title>
+</head>
+<body>
+  <video id="video" width="640" height="480" autoplay></video>
+  <canvas id="canvas" width="640" height="480"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.0.0/dist/coco-ssd.min.js"></script>
+  <script>
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let model;
+
+    async function loadModel() {
+      model = await cocoSsd.load();
+    }
+
+    async function detectObjects() {
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      const predictions = await model.detect(canvas);
+      console.log(predictions);
+      requestAnimationFrame(detectObjects);
+    }
+
+    navigator.mediaDevices.getUserMedia({video: true})
+      .then(stream => {
+        video.srcObject = stream;
+        video.addEventListener('loadedmetadata', () => {
+          video.play();
+          loadModel();
+        });
+      });
+
+    detectObjects();
+  </script>
+</body>
+</html>

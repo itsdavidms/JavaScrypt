@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+  <head>
+    <style>
+    div{
+      position: relative;  
+      width: 50px;
+      height: 50px;
+    }
+    #cuadrado{
+      background-color: yellow;
+      border: blue 1px solid;
+    }
+    #cuadrado2{
+      background-color: blue;
+      border: yellow 1px solid;
+    }
+    #cuadrado3{
+      background-color: green;
+      border: yellow 1px solid;
+    }
+    #cuadrado4{
+      background-color: yellow;
+      border: green 1px solid;
+    }
+  </style>
+    <script>
+      let micuadro,micuadro2,micuadro3,micuadro4;
+      window.onload = function(){
+        document.onmousemove=muestraInformacion;
+      micuadro=document.getElementById("cuadrado");
+      micuadro2=document.getElementById("cuadrado2");
+      micuadro3=document.getElementById("cuadrado3");
+      micuadro4=document.getElementById("cuadrado4");
+    }
+    function muestraInformacion(ElEvento){
+      let x = ElEvento.clientX;
+      let y = ElEvento.clientY;
+      micuadro.style.left=(window.innerWidth-x)+"px";
+      micuadro2.style.left=x+"px";
+      micuadro3.style.left=(window.innerWidth-x)/2+"px";
+      micuadro4.style.left=x/2+"px";
+    }
+    </script>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <div id="cuadrado"></div>
+    <div id="cuadrado2"></div>
+    <div id="cuadrado3"></div>
+    <div id="cuadrado4"></div>
+    <script> 
+    </script>
+  </body>
+</html>
